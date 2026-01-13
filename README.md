@@ -19,7 +19,7 @@ This repository is configured to deploy on Vercel. The `vercel.json` includes:
 ## Customize
 
 - Edit the HTML files in the repo to update content and styles.
-- Replace the placeholder support email `ADD-YOUR-EMAIL-HERE` in `privacy.html` and `support.html` with your support address if desired.
+- Replace the placeholder support email learnpulse.app@gmail.com in `privacy.html` and `support.html` with your support address if desired.
 - Update `vercel.json` if you need additional rewrites or routing rules.
 
 ## Contributing

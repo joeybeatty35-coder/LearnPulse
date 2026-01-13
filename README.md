@@ -4,6 +4,48 @@ Html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnPulse — Privacy Policy</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    .wrap { max-width: 820px; }
+    .muted { color:#6b7280; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="muted">Effective date: 2026-01-13</p>
+
+    <p><strong>LearnPulse</strong> is an informational experience. We respect your privacy.</p>
+
+    <h2>Data Collection</h2>
+    <p>LearnPulse does <strong>not</strong> collect, sell, or share personal user data.</p>
+
+    <h2>Accounts</h2>
+    <p>LearnPulse does not require user accounts.</p>
+
+    <h2>Device Data</h2>
+    <p>We do not access contacts, photos, location, microphone, camera, or device identifiers.</p>
+
+    <h2>Cookies</h2>
+    <p>If LearnPulse is accessed in a web browser, standard web hosting logs may exist (e.g., basic request logs). We do not use them to identify users.</p>
+
+    <h2>Children</h2>
+    <p>LearnPulse is designed for general audiences. If we add features that collect data in the future, we will update this policy before release.</p>
+
+    <h2>Contact</h2>
+    <p>Support: <strong>ADD-YOUR-EMAIL-HERE</strong></p>
+
+    <p class="muted"><a href="/">Back to Home</a></p>
+  </div>
+</body>
+</html>Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LearnPulse</title>
   <meta name="description" content="LearnPulse - Educational & discovery-focused learning." />
   <style>

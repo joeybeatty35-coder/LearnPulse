@@ -4,6 +4,35 @@ Html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnPulse — Support</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    .wrap { max-width: 820px; }
+    .muted { color:#6b7280; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Support</h1>
+    <p>If you need help, contact:</p>
+    <p><strong>ADD-YOUR-EMAIL-HERE</strong></p>
+
+    <h2>Common fixes</h2>
+    <ul>
+      <li>If the app won’t load, check your internet connection.</li>
+      <li>If the page looks outdated, close and reopen the app.</li>
+    </ul>
+
+    <p class="muted"><a href="/">Back to Home</a></p>
+  </div>
+</body>
+</html>Html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LearnPulse — Privacy Policy</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 40px; line-height: 1.6; }

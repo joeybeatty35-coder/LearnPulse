@@ -7,4 +7,13 @@
     }
   ]
 }
-
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "^/blog$", "dest": "/blog/index.html" },
+    { "src": "^/blog/(.*)$", "dest": "/blog/$1" },
+    { "src": "^/$", "dest": "/index.html" }
+  ]
+}

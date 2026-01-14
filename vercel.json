@@ -5,3 +5,16 @@
     { "source": "/support", "destination": "/support.html" }
   ]
 }
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/support", "destination": "/support.html" },
+
+    { "source": "/learn", "destination": "/learn.html" },
+    { "source": "/focus", "destination": "/focus.html" },
+
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/post-template", "destination": "/blog/post-template.html" }
+  ]
+}

@@ -15,5 +15,18 @@
     { "src": "^/blog$", "dest": "/blog/index.html" },
     { "src": "^/blog/(.*)$", "dest": "/blog/$1" },
     { "src": "^/$", "dest": "/index.html" }
+  ]}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+
+    { "source": "/learn", "destination": "/learn.html" },
+    { "source": "/focus", "destination": "/focus.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/support", "destination": "/support.html" },
+
+    { "source": "/blog", "destination": "/blog/index.html" }
   ]
 }

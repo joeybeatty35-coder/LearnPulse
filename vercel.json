@@ -18,3 +18,83 @@
     { "source": "/blog/post-template", "destination": "/blog/post-template.html" }
   ]
 }
+{
+  "name": "LearnPulse - Daily Blog Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            { "mode": "everyDay", "hour": 9, "minute": 0 }
+          ]
+        }
+      },
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [220, 260]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "category", "value": "Study Skills" },
+            { "name": "siteName", "value": "LearnPulse" }
+          ]
+        }
+      },
+      "name": "Set Defaults",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [420, 260]
+    },
+    {
+      "parameters": {
+        "operation": "chat",
+        "model": "gpt-4.1-mini",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful blog writer for LearnPulse. Write educational, factual, non-medical, non-legal, non-financial advice content. Include disclaimer: informational only."
+          },
+          {
+            "role": "user",
+            "content": "Write one SEO blog post for LearnPulse. Category: {{$json.category}}. Output JSON with fields: slug, title, metaDescription, updatedDate (YYYY-MM-DD), bodyHtml (FULL HTML INSIDE <article> ONLY), internalLinks (array of strings). Keep it calm and practical. No copyrighted text."
+          }
+        ]
+      },
+      "name": "AI Write Post",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 4,
+      "position": [640, 260]
+    },
+    {
+      "parameters": {
+        "functionCode": "const data = JSON.parse(items[0].json.choices[0].message.content);\nconst slug = data.slug;\nconst full = `<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/><title>${data.title} — LearnPulse</title><meta name=\"description\" content=\"${data.metaDescription}\"/></head><body>${data.bodyHtml}</body></html>`;\nreturn [{ json: { slug, title: data.title, html: full } }];"
+      },
+      "name": "Build HTML File",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [860, 260]
+    },
+    {
+      "parameters": {
+        "owner": "YOUR_GITHUB_USERNAME",
+        "repository": "LearnPulse",
+        "filePath": "blog/{{$json.slug}}.html",
+        "fileContent": "={{$json.html}}",
+        "commitMessage": "Add blog post: {{$json.title}}"
+      },
+      "name": "GitHub Create File",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 2,
+      "position": [1080, 260]
+    }
+  ],
+  "connections": {
+    "Cron": { "main": [[{ "node": "Set Defaults", "type": "main", "index": 0 }]] },
+    "Set Defaults": { "main": [[{ "node": "AI Write Post", "type": "main", "index": 0 }]] },
+    "AI Write Post": { "main": [[{ "node": "Build HTML File", "type": "main", "index": 0 }]] },
+    "Build HTML File": { "main": [[{ "node": "GitHub Create File", "type": "main", "index": 0 }]] }
+  }
+}

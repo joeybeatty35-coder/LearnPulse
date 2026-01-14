@@ -24,3 +24,134 @@ Html
 /vercel.json
 /robots.txt
 /sitemap.xml
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LearnPulse — Command Center</title>
+  <meta name="description" content="LearnPulse is a calm, privacy-first learning command center for skills, languages, tutorials, and focus tools." />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#101826; --muted:#94a3b8; --text:#e5e7eb;
+      --line:#1f2a3a; --accent:#7c3aed; --accent2:#22c55e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:radial-gradient(1200px 600px at 20% 0%, #1a1030 0%, transparent 60%), var(--bg);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0ea5e9);box-shadow:0 10px 30px rgba(124,58,237,.25)}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--line);padding:10px 12px;border-radius:999px;background:rgba(16,24,38,.6)}
+    .pill:hover{border-color:#2b3a52}
+    .hero{margin-top:18px;border:1px solid var(--line);border-radius:22px;padding:22px;background:linear-gradient(180deg, rgba(16,24,38,.85), rgba(16,24,38,.55));}
+    .hero h1{margin:0;font-size:34px;letter-spacing:-.02em}
+    .hero p{margin:10px 0 0;color:var(--muted);line-height:1.55;max-width:72ch}
+    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .tag{font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:16px}
+    .card{grid-column:span 6;border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(16,24,38,.55)}
+    .card h2{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);line-height:1.5}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:10px 12px;border:1px solid var(--line);background:#0f172a}
+    .btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--accent),#0ea5e9)}
+    .btn.good{border-color:transparent;background:linear-gradient(135deg,var(--accent2),#10b981)}
+    .full{grid-column:span 12}
+    footer{margin:22px 0 6px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .small{font-size:12px}
+    @media (max-width:800px){.card{grid-column:span 12}.hero h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:700">LearnPulse</div>
+          <div class="small" style="color:var(--muted)">Educational & discovery-focused learning</div>
+        </div>
+      </div>
+      <nav>
+        <a class="pill" href="/learn">Learn</a>
+        <a class="pill" href="/focus">Focus Radio</a>
+        <a class="pill" href="/blog">Blog</a>
+        <a class="pill" href="/support">Support</a>
+        <a class="pill" href="/privacy">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Your Learning Command Center</h1>
+      <p>
+        LearnPulse helps you explore skills, languages, tutorials, and ideas in a calm, privacy-first way.
+        <strong>Informational only — not professional advice.</strong>
+      </p>
+      <div class="tags">
+        <span class="tag">Privacy-first</span>
+        <span class="tag">Simple + fast</span>
+        <span class="tag">Focus tools</span>
+        <span class="tag">Blog engine</span>
+        <span class="tag">Automation-ready</span>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" href="/learn">Start Learning</a>
+        <a class="btn good" href="/focus">Open Focus Radio</a>
+        <a class="btn" href="/blog">Read Latest Posts</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>🎓 Learn Something New</h2>
+        <p>Guided tracks, quick wins, and a clean learning flow—built for real progress.</p>
+        <div class="btnrow"><a class="btn" href="/learn">Go to Learn Hub</a></div>
+      </div>
+
+      <div class="card">
+        <h2>📻 Focus Radio</h2>
+        <p>Lo-fi study vibes + customizable stations. You choose what helps you lock in.</p>
+        <div class="btnrow"><a class="btn" href="/focus">Open Focus Mode</a></div>
+      </div>
+
+      <div class="card">
+        <h2>📰 Blog Drops</h2>
+        <p>Daily posts to build SEO and teach users faster: skills, languages, focus, AI learning.</p>
+        <div class="btnrow"><a class="btn" href="/blog">View Blog</a></div>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ Customize</h2>
+        <p>Choose your mode and save it locally (no accounts needed).</p>
+        <div class="btnrow"><a class="btn" href="/learn#customize">Customize</a></div>
+      </div>
+
+      <div class="card full">
+        <h2>✅ Transparency</h2>
+        <p>
+          LearnPulse is informational and educational. Results vary by effort and context.
+          We don’t collect personal data by default. See <a href="/privacy" style="text-decoration:underline">Privacy</a>.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> LearnPulse</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="/privacy" style="text-decoration:underline">Privacy</a>
+        <a href="/support" style="text-decoration:underline">Support</a>
+        <a href="/blog" style="text-decoration:underline">Blog</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

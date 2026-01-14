@@ -1,15 +1,14 @@
 {
+  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-
     { "source": "/learn", "destination": "/learn.html" },
     { "source": "/focus", "destination": "/focus.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/support", "destination": "/support.html" },
-
-    { "source": "/blog", "destination": "/blog/index.html" }
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1" }
   ]
 }
-

@@ -133,3 +133,12 @@
   "updatedDate": "2026-01-14",
   "bodyHtml": "<article><h1>How to Build Vocabulary Without Memorizing Lists</h1><p><strong>Disclaimer:</strong> Informational only.</p><p>Vocabulary sticks better when tied to meaning.</p><h2>Context over lists</h2><ul><li>Sentences</li><li>Stories</li><li>Real usage</li></ul><h2>Recall techniques</h2><p>Explain words from memory.</p><h2>Common mistakes</h2><ul><li>Overloading flashcards</li></ul><h2>Next action</h2><p>Learn 5 words in context today. Visit <a href=\"/blog\">/blog</a> for more.</p></article>"
 }
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ]
+}

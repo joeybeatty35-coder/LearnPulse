@@ -33,3 +33,15 @@ Add a `LICENSE` file to apply a specific license to this project.
 ---
 
 (End of file)
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Learn Faster With a 20-Minute Daily System (No Burnout) — LearnPulse</title>
+  <meta name="description" content="A calm 20-minute daily learning system using focus blocks, active recall, and simple tracking—built for consistency without burnout."/>
+</head>
+<body>
+  <!-- PASTE THE bodyHtml <article> HERE -->
+</body>
+</html>

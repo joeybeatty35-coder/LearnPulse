@@ -3,4 +3,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://learn-pulse-lilac.vercel.app/sitemap.xml
-🗺️ sitemap.xml

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>LearnPulse — Learn</title>
+  <meta name="description" content="LearnPulse Learn Hub: pick a track, build momentum, and keep it simple."/>
+  <style>
+    :root{--bg:#0b0f14;--card:#101826;--muted:#94a3b8;--text:#e5e7eb;--line:#1f2a3a}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:20px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .pill{border:1px solid var(--line);padding:10px 12px;border-radius:999px;text-decoration:none;background:rgba(16,24,38,.6)}
+    .hero{margin-top:16px;border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(16,24,38,.55)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}
+    .card{grid-column:span 6;border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(16,24,38,.35)}
+    .card h2{margin:0 0 6px;font-size:16px}
+    .card p{margin:0;color:var(--muted);line-height:1.5}
+    .btn{display:inline-block;margin-top:10px;border:1px solid var(--line);padding:10px 12px;border-radius:12px;text-decoration:none}
+    .btn:hover{border-color:#2b3a52}
+    .full{grid-column:span 12}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    select{background:#0f172a;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .small{color:var(--muted);font-size:13px;line-height:1.5}
+    @media (max-width:760px){.card{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="pill" href="/">← Command Center</a>
+      <div class="row">
+        <a class="pill" href="/focus">Focus</a>
+        <a class="pill" href="/blog">Blog</a>
+        <a class="pill" href="/support">Support</a>
+        <a class="pill" href="/privacy">Privacy</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1 style="margin:0">Learn Hub</h1>
+      <p class="small" style="margin:8px 0 0">
+        Choose a track. Keep it simple. Stack small wins daily.
+        <strong>Informational only — not professional advice.</strong>
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>🌍 Languages</h2>
+        <p>Daily practice plans + resources + repetition strategy.</p>
+        <a class="btn" href="/blog">Start with Language posts →</a>
+      </div>
+
+      <div class="card">
+        <h2>🧠 Study Skills</h2>
+        <p>Memory, focus, and learning techniques that fit real schedules.</p>
+        <a class="btn" href="/blog">Start with Study posts →</a>
+      </div>
+
+      <div class="card">
+        <h2>💻 Web & Tech</h2>
+        <p>Beginner-to-intermediate tutorials and practical build steps.</p>
+        <a class="btn" href="/blog">Start with Tech posts →</a>
+      </div>
+
+      <div class="card">
+        <h2>🤖 AI for Learning</h2>
+        <p>Use AI responsibly to accelerate learning and project completion.</p>
+        <a class="btn" href="/blog">Start with AI posts →</a>
+      </div>
+
+      <div class="card full" id="customize">
+        <h2>⚙️ Customize</h2>
+        <p class="small">Preferences save locally on your device (no account required).</p>
+        <div class="row">
+          <label>
+            Mode:
+            <select id="mode">
+              <option value="balanced">Balanced</option>
+              <option value="focus">Deep Focus</option>
+              <option value="fast">Fast Lessons</option>
+            </select>
+          </label>
+
+          <label>
+            Topic:
+            <select id="topic">
+              <option value="languages">Languages</option>
+              <option value="study">Study</option>
+              <option value="tech">Tech</option>
+              <option value="ai">AI</option>
+            </select>
+          </label>
+
+          <a class="btn" href="/focus">Open Focus</a>
+        </div>
+
+        <p class="small" id="saved" style="margin-top:10px"></p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const mode = document.getElementById('mode');
+    const topic = document.getElementById('topic');
+    const saved = document.getElementById('saved');
+
+    function load(){
+      mode.value = localStorage.getItem('lp_mode') || 'balanced';
+      topic.value = localStorage.getItem('lp_topic') || 'languages';
+      saved.textContent = `Saved: Mode = ${mode.value}, Topic = ${topic.value}`;
+    }
+    function save(){
+      localStorage.setItem('lp_mode', mode.value);
+      localStorage.setItem('lp_topic', topic.value);
+      load();
+    }
+    mode.addEventListener('change', save);
+    topic.addEventListener('change', save);
+    load();
+  </script>
+</body>
+</html>

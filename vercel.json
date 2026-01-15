@@ -1,3 +1,4 @@
+{
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
@@ -5,6 +6,7 @@
     { "source": "/support", "destination": "/support.html" },
     { "source": "/learn", "destination": "/learn.html" },
     { "source": "/focus", "destination": "/focus.html" },
-    { "source": "/blog", "destination": "/blog.html" }
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/post-template", "destination": "/post-template.html" }
   ]
 }

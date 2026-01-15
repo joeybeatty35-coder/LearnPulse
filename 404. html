@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Page not found — LearnPulse</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0f17;color:#e7eefc;margin:0;display:grid;min-height:100vh;place-items:center}
+    .card{max-width:720px;padding:28px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}
+    a{color:#9cc2ff}
+    code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Page not found</h1>
+    <p>The page you tried to open doesn’t exist (yet).</p>
+    <p>Go back to <a href="/">Home</a> or try:</p>
+    <ul>
+      <li><a href="/learn">/learn</a></li>
+      <li><a href="/focus">/focus</a></li>
+      <li><a href="/blog">/blog</a></li>
+      <li><a href="/privacy">/privacy</a></li>
+      <li><a href="/support">/support</a></li>
+    </ul>
+    <p style="opacity:.8">Tip: if you link to <code>/something</code>, you must have a matching file or rewrite.</p>
+  </div>
+</body>
+</html>

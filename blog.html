@@ -1,50 +1,417 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>LearnPulse — Blog</title>
-  <meta name="description" content="LearnPulse blog: learning, languages, focus, study techniques, and responsible AI learning workflows."/>
-  <style>
-    :root{--bg:#0b0f14;--muted:#94a3b8;--text:#e5e7eb;--line:#1f2a3a}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
-    a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:20px}
-    .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-    .pill{border:1px solid var(--line);padding:10px 12px;border-radius:999px;text-decoration:none;background:rgba(16,24,38,.6)}
-    .hero{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(16,24,38,.55)}
-    .hero p{color:var(--muted);line-height:1.55;margin:8px 0 0}
-    .list{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .post{grid-column:span 12;border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(16,24,38,.35)}
-    .post h2{margin:0 0 6px;font-size:18px}
-    .meta{color:var(--muted);font-size:13px}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pop Culture Feed — LearnPulse</title>
+  <meta name="description" content="LearnPulse Pop Culture Feed: movies, music, gaming, world & US news, plus creator-friendly learning notes. Privacy-first. Informational only. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="top">
-      <a class="pill" href="/">← Command Center</a>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="pill" href="/learn">Learn</a>
-        <a class="pill" href="/focus">Focus</a>
-        <a class="pill" href="/support">Support</a>
-        <a class="pill" href="/privacy">Privacy</a>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <b>LearnPulse</b>
+        <span>Privacy-first learning + discovery</span>
+      </div>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html">Learn</a>
+      <a href="/blog.html" aria-current="page">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/plans.html">Plans</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+
+    <div class="navcta">
+      <button class="btn ghost" id="btnShuffle" type="button" aria-label="Refresh feed">Refresh</button>
+      <a class="btn primary" href="#feed">Browse Feed</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">POP CULTURE • NEWS • DISCOVERY</p>
+        <h1 class="h1">A calm, scrollable feed — without the noise.</h1>
+        <p class="sub">
+          Movies, music, gaming, world and US updates — plus occasional learning notes for creators.
+          <b>Informational only.</b> We don’t promise outcomes. <b>Results vary.</b>
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">Privacy-first</span>
+          <span class="chip">No hype</span>
+          <span class="chip">Value-first</span>
+          <span class="chip">Mobile-friendly</span>
+        </div>
+
+        <div class="disclaimer">
+          This feed contains general information and commentary. Always verify important details with official sources.
+          Informational only. Results vary.
+        </div>
+
+        <hr class="sep" />
+
+        <div class="formRow">
+          <div>
+            <div class="label" for="filter">Filter</div>
+            <select class="select" id="filter" aria-label="Filter category">
+              <option value="all">All</option>
+              <option value="movies">Movies</option>
+              <option value="music">Music</option>
+              <option value="gaming">Gaming</option>
+              <option value="world">World</option>
+              <option value="us">US</option>
+              <option value="creator">Creator Notes</option>
+            </select>
+          </div>
+
+          <div>
+            <div class="label" for="search">Search</div>
+            <input class="input" id="search" type="search" placeholder="Search titles or keywords…" autocomplete="off" />
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px;">
+          <span class="mini" id="metaLine">Showing default feed.</span>
+          <span class="badge info" id="freshness">Updated: local sample set</span>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <div class="heroArt">
+          <!-- Optional: replace this image later with your own banner -->
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>LearnPulse Pop Culture</b>
+            <div class="mini">Scroll. Save ideas. Keep it ethical. Keep it real.</div>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <div>
+            <b>Quick actions</b>
+            <div class="mini">Fast, simple, and respectful of your time.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a class="btn" href="/learn.html">Go to Learn</a>
+          <a class="btn ghost" href="/bluefocus.html">Read the Journal</a>
+          <a class="btn ghost" href="/support.html">Suggest a Topic</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="hero">
-      <h1 style="margin:0">LearnPulse Blog</h1>
-      <p>Posts to teach faster and keep the site active. Informational only — not professional advice.</p>
-    </section>
+  <!-- FEED -->
+  <section class="section motion-in" id="feed">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Today’s Feed</h2>
+          <p class="mini" style="margin:0;">
+            Tap <b>Refresh</b> to rotate posts. This is a safe default sample feed (no external APIs).
+          </p>
+        </div>
 
-    <section class="list">
-      <article class="post">
-        <h2><a href="/post-template">Post Template (start here)</a></h2>
-        <div class="meta">Template • updated anytime</div>
-      </article>
-    </section>
-  </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" type="button" id="btnTop">Back to Top</button>
+          <a class="btn ghost" href="/plans.html">Plans</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="feedWrap" id="feedWrap" aria-live="polite"></div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">Feed refreshed.</div>
+
+      <div class="disclaimer">
+        Tip: if you’re adding real links later, keep titles factual and avoid exaggerated claims. Informational only. Results vary.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  const POSTS = [
+    // Movies (2)
+    {
+      id: "m1",
+      cat: "movies",
+      tag: "Movies",
+      badge: "info",
+      title: "What makes a trailer feel cinematic (without feeling loud)",
+      desc: "A quick breakdown of pacing, music beats, and scene contrast that makes previews feel premium.",
+      note: "Creator note: use restraint — silence and space can be the hook."
+    },
+    {
+      id: "m2",
+      cat: "movies",
+      tag: "Movies",
+      badge: "info",
+      title: "3 storytelling angles audiences replay: mystery, meaning, momentum",
+      desc: "When a scene leaves a question, a lesson, or a push forward — rewatch value jumps.",
+      note: "Informational only. Results vary."
+    },
+
+    // Music (2)
+    {
+      id: "mu1",
+      cat: "music",
+      tag: "Music",
+      badge: "info",
+      title: "Lo-fi focus: how to keep it calm but not boring",
+      desc: "Texture, subtle swing, and gentle transitions can hold attention without shouting.",
+      note: "Creator note: keep headroom — let the listener breathe."
+    },
+    {
+      id: "mu2",
+      cat: "music",
+      tag: "Music",
+      badge: "info",
+      title: "Hook math: why simple motifs travel farther",
+      desc: "Short melodic ideas are easier to remember — then you earn the right to expand.",
+      note: "Informational only. Results vary."
+    },
+
+    // Gaming (2)
+    {
+      id: "g1",
+      cat: "gaming",
+      tag: "Gaming",
+      badge: "info",
+      title: "The real reason some games feel ‘clean’ on mobile",
+      desc: "Readable UI, large tap targets, and less clutter are the difference between fun and fatigue.",
+      note: "Design note: prioritize thumb zones and contrast."
+    },
+    {
+      id: "g2",
+      cat: "gaming",
+      tag: "Gaming",
+      badge: "info",
+      title: "Skill progression that doesn’t punish beginners",
+      desc: "Good games teach by doing: small wins, gentle difficulty, and feedback you can understand.",
+      note: "Informational only. Results vary."
+    },
+
+    // World (2)
+    {
+      id: "w1",
+      cat: "world",
+      tag: "World",
+      badge: "warn",
+      title: "Information overload: how to keep your mind from getting hijacked",
+      desc: "Reduce inputs, choose one topic window, and protect your sleep — attention is a resource.",
+      note: "Wellness note: this is informational only, not medical advice."
+    },
+    {
+      id: "w2",
+      cat: "world",
+      tag: "World",
+      badge: "warn",
+      title: "Trust signals online: what to look for before you believe something",
+      desc: "Check source, date, author, and whether multiple credible outlets confirm it.",
+      note: "Informational only. Results vary."
+    },
+
+    // US (2)
+    {
+      id: "us1",
+      cat: "us",
+      tag: "US",
+      badge: "warn",
+      title: "Community spotlight: learning in public without ego",
+      desc: "Share what you’re building, show your process, and invite correction — that’s real progress.",
+      note: "Creator note: humility scales faster than hype."
+    },
+    {
+      id: "us2",
+      cat: "us",
+      tag: "US",
+      badge: "warn",
+      title: "Work-life friction: why small routines beat big motivation",
+      desc: "When your energy dips, systems keep you moving — 10 minutes a day is still forward.",
+      note: "Informational only. Results vary."
+    },
+
+    // Creator Notes (2)
+    {
+      id: "c1",
+      cat: "creator",
+      tag: "Creator Notes",
+      badge: "good",
+      title: "A simple content loop: learn → summarize → share → repeat",
+      desc: "Turn what you study into short posts. Clarity is a superpower when you’re consistent.",
+      note: "No guarantees. Results vary based on effort and consistency."
+    },
+    {
+      id: "c2",
+      cat: "creator",
+      tag: "Creator Notes",
+      badge: "good",
+      title: "Ethical growth: don’t promise what you can’t control",
+      desc: "Focus on value, disclaimers, and transparency. Trust is the long game.",
+      note: "Informational only. Results vary."
+    }
+  ];
+
+  const feedWrap = document.getElementById("feedWrap");
+  const filterEl = document.getElementById("filter");
+  const searchEl = document.getElementById("search");
+  const btnShuffle = document.getElementById("btnShuffle");
+  const btnTop = document.getElementById("btnTop");
+  const toast = document.getElementById("toast");
+  const metaLine = document.getElementById("metaLine");
+  const freshness = document.getElementById("freshness");
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, s => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    }[s]));
+  }
+
+  function badgeClass(kind){
+    if(kind === "good") return "badge good";
+    if(kind === "warn") return "badge warn";
+    return "badge info";
+  }
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+
+  function nowLabel(){
+    const d = new Date();
+    return d.toLocaleString(undefined, { weekday:"short", hour:"2-digit", minute:"2-digit" });
+  }
+
+  function getFilteredPosts(){
+    const cat = filterEl.value;
+    const q = searchEl.value.trim().toLowerCase();
+    return POSTS.filter(p => {
+      const catOk = (cat === "all") || (p.cat === cat);
+      const qOk = !q || (p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.tag.toLowerCase().includes(q));
+      return catOk && qOk;
+    });
+  }
+
+  function render(posts){
+    const list = posts.length ? posts : [];
+    feedWrap.innerHTML = list.length ? list.map(p => {
+      const tag = escapeHtml(p.tag);
+      const title = escapeHtml(p.title);
+      const desc = escapeHtml(p.desc);
+      const note = escapeHtml(p.note || "");
+      return `
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">${tag}</span>
+            <span class="${badgeClass(p.badge)}">Informational</span>
+          </div>
+          <div class="feedTitle">${title}</div>
+          <div class="feedDesc">${desc}</div>
+          <div class="aiLine" aria-hidden="true"></div>
+          <div class="mini" style="margin-top:10px;">${note}</div>
+        </article>
+      `;
+    }).join("") : `
+      <div class="card pad" style="box-shadow:none;">
+        <b>No results.</b>
+        <div class="mini" style="margin-top:6px;">Try clearing search or switching categories.</div>
+      </div>
+    `;
+
+    const total = getFilteredPosts().length;
+    const shown = posts.length;
+    metaLine.textContent = shown ? `Showing ${shown} post${shown===1?"":"s"} (${total} match${total===1?"":"es"}).` : "No matches found.";
+  }
+
+  function refresh(){
+    const filtered = getFilteredPosts();
+    const rotated = shuffle(filtered);
+    render(rotated);
+    freshness.textContent = "Updated: " + nowLabel();
+    toast.style.display = "inline-flex";
+    clearTimeout(window.__lpToast);
+    window.__lpToast = setTimeout(()=> toast.style.display="none", 1600);
+  }
+
+  // Initial render
+  render(shuffle(POSTS));
+
+  // Events
+  filterEl.addEventListener("change", refresh);
+  searchEl.addEventListener("input", function(){
+    // quick refresh without toast spam
+    const filtered = shuffle(getFilteredPosts());
+    render(filtered);
+  });
+  btnShuffle.addEventListener("click", refresh);
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Optional: “hourly refresh” without external APIs (rotates samples)
+  // Keeps page feeling alive while staying static + policy-safe.
+  setInterval(() => {
+    // refresh only if user is still on the tab
+    if(document.visibilityState === "visible"){
+      const filtered = shuffle(getFilteredPosts());
+      render(filtered);
+      freshness.textContent = "Updated: " + nowLabel();
+    }
+  }, 60 * 60 * 1000);
+})();
+</script>
+
 </body>
 </html>
-post-template.html
+```0

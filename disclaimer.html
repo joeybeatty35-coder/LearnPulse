@@ -1,102 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Disclaimer — LearnPulse</title>
-  <meta name="description" content="LearnPulse disclaimer and educational notice"/>
-  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="description" content="LearnPulse Disclaimer. Educational and informational-only platform. No guarantees. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
 </head>
+
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="container nav">
-    <a href="/" class="brand">
-      <div class="logo"></div>
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
       <div>
         <b>LearnPulse</b>
-        <span>Disclaimer</span>
+        <span>Privacy-first learning + discovery</span>
       </div>
     </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html">Learn</a>
+      <a href="/blog.html">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/plans.html">Plans</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/disclaimer.html" aria-current="page">Disclaimer</a>
+    </nav>
+
     <div class="navcta">
-      <a class="btn" href="/">Home</a>
-      <a class="btn primary" href="/support">Support</a>
+      <a class="btn ghost" href="/">Home</a>
+      <a class="btn primary" href="#disclaimer">Read Disclaimer</a>
     </div>
   </div>
-</div>
+</header>
 
-<section class="section container">
-  <div class="card pad motion-in">
-    <div class="badge info">Effective date: 2026-01-13</div>
-    <h2 style="margin-top:10px;">Disclaimer</h2>
+<main class="container">
 
-    <hr class="sep"/>
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">DISCLAIMER</p>
+        <h1 class="h1">Informational only. Results vary.</h1>
+        <p class="sub">
+          LearnPulse is an educational and discovery-focused platform.
+          All content is provided for general informational purposes only.
+          We do not provide professional, legal, medical, financial, or cybersecurity services.
+        </p>
 
-    <h2>Educational & Informational Only</h2>
-    <p class="mini">
-      LearnPulse provides educational and informational content only. Nothing on LearnPulse should be interpreted as
-      professional advice (including legal, medical, financial, or technical advice).
-    </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">No guarantees</span>
+          <span class="chip">Educational use</span>
+          <span class="chip">User responsibility</span>
+          <span class="chip">Transparency</span>
+        </div>
 
-    <hr class="sep"/>
+        <div class="disclaimer">
+          By using LearnPulse, you agree that your use of the site and its content is at your own risk.
+          <b>Results vary.</b>
+        </div>
 
-    <h2>Results Vary</h2>
-    <p class="mini">
-      Learning outcomes and results vary based on personal effort, focus, background knowledge, practice habits,
-      consistency, and other factors. LearnPulse does not guarantee results, mastery, certifications, income,
-      or any specific outcome.
-    </p>
+        <hr class="sep" />
 
-    <hr class="sep"/>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn ghost" href="/privacy.html">Privacy</a>
+          <a class="btn ghost" href="/terms.html">Terms</a>
+          <a class="btn" href="mailto:learnpulse.app@gmail.com?subject=Disclaimer%20Question%20-%20LearnPulse">Ask a Question</a>
+        </div>
+      </div>
 
-    <h2>Cybersecurity Safety Notice</h2>
-    <p class="mini">
-      Any cybersecurity-related content is intended for ethical, defensive, and authorized learning only.
-      LearnPulse does not encourage or support unauthorized access, wrongdoing, or illegal activity.
-      Always follow applicable laws and obtain explicit permission before testing systems.
-    </p>
+      <div class="card pad">
+        <div class="heroArt">
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>Learn responsibly</b>
+            <div class="mini">Knowledge is powerful — use it ethically.</div>
+          </div>
+        </div>
 
-    <hr class="sep"/>
+        <hr class="sep" />
 
-    <h2>Third-Party Resources</h2>
-    <p class="mini">
-      LearnPulse may reference third-party resources (websites, tools, tutorials, or platforms). LearnPulse does not control
-      third-party content and does not endorse all third-party claims. Use third-party resources at your own discretion.
-    </p>
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">⚠️</div>
+          <div>
+            <b>Quick summary</b>
+            <div class="mini">Plain-language highlights.</div>
+          </div>
+        </div>
 
-    <hr class="sep"/>
+        <ul class="list">
+          <li>We do not guarantee outcomes, success, or earnings.</li>
+          <li>We do not provide professional advice.</li>
+          <li>You are responsible for how you use information.</li>
+          <li>Cybersecurity content is defensive and authorized use only.</li>
+        </ul>
 
-    <h2>Accuracy & Updates</h2>
-    <p class="mini">
-      LearnPulse aims to provide helpful information, but content may be simplified, generalized, or become outdated.
-      Where appropriate, verify important information using reputable sources.
-    </p>
-
-    <hr class="sep"/>
-
-    <h2>Contact</h2>
-    <p class="mini">
-      Questions about this disclaimer? Contact: <b>learnpulse.app@gmail.com</b>
-    </p>
-
-    <div class="disclaimer">
-      This page is provided for transparency and user safety.
+        <div class="mini" style="margin-top:10px;">
+          Effective date: <span id="effectiveDate">2026-01-17</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer container">
-  <div class="footerGrid">
-    <div><b>LearnPulse</b><div class="mini">Safety & Transparency</div></div>
-    <div>
-      <div><a href="/">Home</a></div>
-      <div><a href="/privacy">Privacy</a></div>
-      <div><a href="/terms">Terms</a></div>
-      <div><a href="/support">Support</a></div>
+  <!-- DISCLAIMER CONTENT -->
+  <section class="section motion-in" id="disclaimer">
+    <div class="card pad">
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Full Disclaimer</h2>
+          <p class="mini" style="margin:0;">
+            Please read this carefully before using LearnPulse.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" type="button" id="btnTop">Back to Top</button>
+          <a class="btn ghost" href="/support.html">Support</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="grid">
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">1) No professional advice</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            Content on LearnPulse is for educational and informational purposes only.
+            It is not a substitute for professional advice of any kind, including legal,
+            medical, financial, or cybersecurity services.
+          </p>
+          <ul class="list">
+            <li>Consult a qualified professional for serious decisions.</li>
+            <li>Do not rely solely on online content.</li>
+          </ul>
+        </div>
+
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">2) Results vary</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            Learning outcomes, skills, and results depend on many factors,
+            including effort, background, time invested, and external circumstances.
+          </p>
+          <ul class="list">
+            <li>No guarantees of success or performance.</li>
+            <li>No promises of income or financial results.</li>
+          </ul>
+        </div>
+
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">3) Cybersecurity & technical content</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            Any cybersecurity or technical content is intended to promote awareness,
+            safe practices, and defensive learning only.
+          </p>
+          <ul class="list">
+            <li>Use only on systems you own or have explicit authorization to access.</li>
+            <li>Do not attempt to bypass, exploit, or interfere with systems.</li>
+            <li>Report vulnerabilities responsibly.</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="grid">
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">4) External links</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            LearnPulse may link to third-party websites for convenience or reference.
+            We do not control or endorse those sites.
+          </p>
+          <ul class="list">
+            <li>Review third-party policies before engaging.</li>
+            <li>We are not responsible for third-party content.</li>
+          </ul>
+        </div>
+
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">5) Limitation of liability</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            To the fullest extent allowed by law, LearnPulse is not liable for any damages
+            arising from the use or inability to use the website or its content.
+          </p>
+          <ul class="list">
+            <li>Use the site at your own risk.</li>
+            <li>No warranties, express or implied.</li>
+          </ul>
+        </div>
+
+        <div class="card pad" style="box-shadow:none;">
+          <h3 style="margin:0 0 8px;">6) Changes</h3>
+          <p class="mini" style="margin:0 0 12px;">
+            We may update this Disclaimer as LearnPulse evolves.
+            Continued use of the site means you accept the current version.
+          </p>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:16px;">
+        If you have questions about this Disclaimer, contact us at
+        <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>.
+      </div>
+
     </div>
-    <div class="mini">© 2026 LearnPulse</div>
-  </div>
-</footer>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  const btnTop = document.getElementById("btnTop");
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // If you want to auto-set effective date to today, uncomment:
+  // document.getElementById("effectiveDate").textContent = new Date().toISOString().slice(0,10);
+})();
+</script>
 
 </body>
-</html
+</html>

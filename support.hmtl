@@ -1,115 +1,383 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Support — LearnPulse</title>
-  <meta name="description" content="LearnPulse support, suggestions, and contact"/>
-  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="description" content="Support LearnPulse: suggestion box, donate/support options, and contact. Privacy-first. Informational only. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
 </head>
+
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="container nav">
-    <a href="/" class="brand">
-      <div class="logo"></div>
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
       <div>
         <b>LearnPulse</b>
-        <span>Support & Suggestions</span>
+        <span>Privacy-first learning + discovery</span>
       </div>
     </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html">Learn</a>
+      <a href="/blog.html">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/plans.html">Plans</a>
+      <a href="/support.html" aria-current="page">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+
     <div class="navcta">
-      <a class="btn" href="/">Home</a>
-      <a class="btn primary" href="/donate">Donate</a>
+      <a class="btn ghost" href="/">Home</a>
+      <a class="btn primary" href="#suggest">Suggestion Box</a>
     </div>
   </div>
-</div>
+</header>
 
-<section class="section container">
-  <div class="grid">
-    <!-- SUPPORT CARD -->
-    <div class="card pad motion-in">
-      <h2>Contact Support</h2>
-      <p class="mini">
-        LearnPulse is an educational and discovery-focused platform. If you have questions,
-        feedback, or experience an issue, you can reach us below.
-      </p>
+<main class="container">
 
-      <div class="label">Support Email</div>
-      <div class="badge info">learnpulse.app@gmail.com</div>
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">SUPPORT • SUGGESTIONS • COMMUNITY</p>
+        <h1 class="h1">Help shape LearnPulse.</h1>
+        <p class="sub">
+          Want a topic covered? Found a bug? Have an idea for the feed?
+          Drop it below. This is a privacy-first site, so we keep forms simple.
+          <b>Informational only.</b> Outcomes vary. <b>Results vary.</b>
+        </p>
 
-      <hr class="sep"/>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">Value-first</span>
+          <span class="chip">No spam</span>
+          <span class="chip">Privacy-first</span>
+          <span class="chip">Human feedback</span>
+        </div>
 
-      <h2>What We Can Help With</h2>
-      <ul class="list">
-        <li>General platform questions</li>
-        <li>Content clarification</li>
-        <li>Bug reports</li>
-        <li>Privacy concerns</li>
-        <li>Accessibility feedback</li>
-      </ul>
+        <div class="disclaimer">
+          Note: This page is informational. Suggestions are reviewed and may or may not be implemented.
+          Please don’t share sensitive personal data. Results vary.
+        </div>
+
+        <hr class="sep" />
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#donate">Donate / Support</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+          <a class="btn ghost" href="/plans.html">Plans</a>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <div class="heroArt">
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>Keep it calm</b>
+            <div class="mini">Build a better feed, one honest suggestion at a time.</div>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">✅</div>
+          <div>
+            <b>What we accept</b>
+            <div class="mini">Clear, specific, respectful requests.</div>
+          </div>
+        </div>
+
+        <ul class="list">
+          <li>Lesson requests (beginner-friendly)</li>
+          <li>Pop culture topics (movies/music/gaming/news)</li>
+          <li>Website bugs or layout issues</li>
+          <li>Accessibility + mobile improvements</li>
+        </ul>
+
+        <div class="mini" style="margin-top:10px;">
+          Cybersecurity content is defensive and authorized only — no hacking instructions.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUGGESTION BOX -->
+  <section class="section motion-in" id="suggest">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Suggestion Box</h2>
+          <p class="mini" style="margin:0;">This uses a safe email draft (mailto). No tracking. No database.</p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" type="button" id="btnTop">Back to Top</button>
+          <a class="btn ghost" href="/learn.html">Learn</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="formRow">
+        <div>
+          <div class="label" for="type">Type</div>
+          <select class="select" id="type">
+            <option value="Topic Request">Topic Request</option>
+            <option value="Bug Report">Bug Report</option>
+            <option value="Feature Idea">Feature Idea</option>
+            <option value="Partnership/Collab">Partnership / Collab</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="label" for="name">Name (optional)</div>
+          <input class="input" id="name" type="text" placeholder="Your name (optional)" />
+        </div>
+      </div>
+
+      <div class="formRow" style="margin-top:10px;">
+        <div>
+          <div class="label" for="category">Category</div>
+          <select class="select" id="category">
+            <option value="Learn">Learn (Basic Skills)</option>
+            <option value="Pop Culture">Pop Culture</option>
+            <option value="Blue Focus Journal">Blue Focus Journal</option>
+            <option value="Plans/Support">Plans / Support</option>
+            <option value="Site UI">Site UI / Mobile</option>
+          </select>
+        </div>
+
+        <div>
+          <div class="label" for="email">Email (optional)</div>
+          <input class="input" id="email" type="email" placeholder="If you want a reply (optional)" />
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <div class="label" for="message">Message</div>
+        <textarea id="message" placeholder="Describe your idea clearly. Please do not include sensitive personal info."></textarea>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:center;">
+        <button class="btn primary" type="button" id="btnSend">Create Email Draft</button>
+        <button class="btn ghost" type="button" id="btnClear">Clear</button>
+        <span class="mini">This opens your email app with a pre-filled message.</span>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">Email draft created.</div>
 
       <div class="disclaimer">
-        LearnPulse does not provide professional, legal, or technical services. All content
-        is educational and informational only.
+        Informational only. Results vary. We may summarize suggestions to improve LearnPulse.
       </div>
     </div>
+  </section>
 
-    <!-- SUGGESTIONS -->
-    <div class="card pad motion-in" style="animation-delay:.05s;">
-      <h2>Suggestion Box</h2>
-      <p class="mini">
-        Help us improve LearnPulse. Share ideas for new topics, features, or learning categories.
+  <!-- DONATE / SUPPORT -->
+  <section class="section motion-in" id="donate">
+    <div class="card pad">
+      <div class="iconTitle">
+        <div class="icon" aria-hidden="true">💙</div>
+        <div>
+          <h2 style="margin:0;">Donate / Support</h2>
+          <div class="mini">Optional support to help cover hosting and content creation.</div>
+        </div>
+      </div>
+
+      <p class="mini" style="margin-top:10px;">
+        Donations are optional and help keep LearnPulse free for everyone. We do not promise outcomes.
+        Informational only. Results vary.
       </p>
 
-      <div class="label">Your suggestion</div>
-      <textarea placeholder="Share your idea or feedback here..."></textarea>
+      <div class="grid" style="margin-top:12px;">
+        <div class="card pad" style="box-shadow:none;">
+          <b>Quick Support (Placeholder)</b>
+          <p class="mini" style="margin-top:6px;">
+            Replace the link below with your real donation link later (PayPal, Ko-fi, Buy Me a Coffee, etc.).
+          </p>
+          <a class="btn" id="donateLink" href="#" rel="nofollow">Donate Link (Not Connected Yet)</a>
+          <div class="smallprint" style="margin-top:10px;">
+            Tip: once connected, keep it transparent: what support funds, refund policy if applicable, and contact.
+          </div>
+        </div>
 
-      <div class="label">Optional contact (email)</div>
-      <input class="input" type="email" placeholder="you@example.com"/>
+        <div class="card pad" style="box-shadow:none;">
+          <b>Support via Pro</b>
+          <p class="mini" style="margin-top:6px;">
+            Pro is optional. If you want advanced packs later, you can upgrade on the Plans page.
+          </p>
+          <a class="btn ghost" href="/plans.html">View Plans</a>
+          <div class="smallprint" style="margin-top:10px;">No guarantees. Results vary.</div>
+        </div>
 
-      <div style="margin-top:12px;">
-        <button class="btn primary" type="button" onclick="alert('Thank you! Your suggestion has been noted. (Demo mode)')">
-          Submit suggestion
-        </button>
+        <div class="card pad" style="box-shadow:none;">
+          <b>Non-money support</b>
+          <p class="mini" style="margin-top:6px;">
+            The best support is sharing LearnPulse with one person who would actually benefit.
+          </p>
+          <button class="btn ghost" id="btnCopy">Copy Site Link</button>
+          <div class="smallprint" style="margin-top:10px;">Respect platforms. Avoid spam.</div>
+        </div>
       </div>
 
-      <div class="mini" style="margin-top:10px;">
-        Submissions are reviewed but not guaranteed to be implemented.
+      <hr class="sep" />
+
+      <div class="mini">
+        Privacy note: we do not embed third-party donation widgets by default on this page.
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section container">
-  <div class="card pad motion-in">
-    <h2>Support LearnPulse</h2>
-    <p class="mini">
-      LearnPulse is designed to keep core learning free. If you find the platform helpful,
-      you may choose to support its development and maintenance through optional donations.
-    </p>
+  <!-- CONTACT -->
+  <section class="section motion-in" id="contact">
+    <div class="card pad">
+      <h2 style="margin:0 0 10px;">Contact</h2>
+      <p class="mini" style="margin:0 0 12px;">
+        For help, business inquiries, or corrections: email us.
+      </p>
 
-    <a class="btn primary" href="/donate">Make a voluntary donation</a>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn primary" href="mailto:learnpulse.app@gmail.com?subject=LearnPulse%20Contact">Email LearnPulse</a>
+        <a class="btn ghost" href="/privacy.html">Privacy</a>
+        <a class="btn ghost" href="/terms.html">Terms</a>
+        <a class="btn ghost" href="/disclaimer.html">Disclaimer</a>
+      </div>
 
-    <div class="disclaimer">
-      Donations are optional and do not unlock features, influence recommendations,
-      or guarantee learning outcomes.
+      <div class="disclaimer" style="margin-top:14px;">
+        Please do not send sensitive personal information. Informational only. Results vary.
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer container">
-  <div class="footerGrid">
-    <div><b>LearnPulse</b><div class="mini">Support & Community</div></div>
-    <div>
-      <div><a href="/">Home</a></div>
-      <div><a href="/privacy">Privacy</a></div>
-      <div><a href="/terms">Terms</a></div>
-      <div><a href="/disclaimer">Disclaimer</a></div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
     </div>
-    <div class="mini">© 2026 LearnPulse</div>
-  </div>
-</footer>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  const EMAIL_TO = "learnpulse.app@gmail.com";
+  const SITE_URL = (location && location.origin) ? location.origin : "https://learn-pulse-git-main-learnpulse1.vercel.app";
+
+  const typeEl = document.getElementById("type");
+  const nameEl = document.getElementById("name");
+  const catEl = document.getElementById("category");
+  const emailEl = document.getElementById("email");
+  const msgEl = document.getElementById("message");
+
+  const btnSend = document.getElementById("btnSend");
+  const btnClear = document.getElementById("btnClear");
+  const btnTop = document.getElementById("btnTop");
+  const btnCopy = document.getElementById("btnCopy");
+  const toast = document.getElementById("toast");
+
+  function showToast(text){
+    toast.textContent = text || "Done.";
+    toast.style.display = "inline-flex";
+    clearTimeout(window.__lpToast);
+    window.__lpToast = setTimeout(()=> toast.style.display="none", 1600);
+  }
+
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  btnClear.addEventListener("click", () => {
+    typeEl.value = "Topic Request";
+    nameEl.value = "";
+    catEl.value = "Learn";
+    emailEl.value = "";
+    msgEl.value = "";
+    showToast("Cleared.");
+  });
+
+  btnSend.addEventListener("click", () => {
+    const type = typeEl.value.trim();
+    const name = nameEl.value.trim();
+    const category = catEl.value.trim();
+    const reply = emailEl.value.trim();
+    const msg = msgEl.value.trim();
+
+    if(!msg){
+      alert("Please write a message first.");
+      return;
+    }
+
+    const subject = `LearnPulse — ${type} (${category})`;
+    const lines = [
+      `Type: ${type}`,
+      `Category: ${category}`,
+      name ? `Name: ${name}` : `Name: (not provided)`,
+      reply ? `Reply-to: ${reply}` : `Reply-to: (not provided)`,
+      `Source page: ${SITE_URL}/support.html`,
+      "",
+      "Message:",
+      msg,
+      "",
+      "Note: Informational only. Results vary."
+    ];
+
+    const body = lines.join("\n");
+    const url = `mailto:${encodeURIComponent(EMAIL_TO)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
+    showToast("Email draft created.");
+  });
+
+  btnCopy.addEventListener("click", async () => {
+    const text = SITE_URL;
+    try{
+      await navigator.clipboard.writeText(text);
+      showToast("Site link copied.");
+    }catch(e){
+      // fallback
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("Site link copied.");
+    }
+  });
+
+  // Donation placeholder behavior
+  const donateLink = document.getElementById("donateLink");
+  donateLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert(
+      "Donation link is not connected yet.\n\n" +
+      "Next step: create a donation link (PayPal / Ko-fi / Buy Me a Coffee) and replace the href on this page.\n\n" +
+      "Informational only. Results vary."
+    );
+  });
+})();
+</script>
 
 </body>
 </html>
+```0

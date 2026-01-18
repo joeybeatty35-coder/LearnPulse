@@ -1,97 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Plans — LearnPulse</title>
-  <meta name="description" content="LearnPulse free and optional advanced plans"/>
-  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="description" content="LearnPulse plans: Free vs Pro. Support the platform and unlock optional advanced learning. Privacy-first. Informational only. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
 </head>
+
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="container nav">
-    <a href="/" class="brand">
-      <div class="logo"></div>
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
       <div>
         <b>LearnPulse</b>
-        <span>Plans</span>
+        <span>Privacy-first learning + discovery</span>
       </div>
     </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html">Learn</a>
+      <a href="/blog.html">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/plans.html" aria-current="page">Plans</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+
     <div class="navcta">
-      <a class="btn" href="/">Home</a>
-      <a class="btn primary" href="/donate">Donate</a>
+      <a class="btn ghost" href="/">Home</a>
+      <a class="btn primary" href="#pricing">View Plans</a>
     </div>
   </div>
-</div>
+</header>
 
-<section class="section container">
-  <div class="card pad motion-in">
-    <h2>Free vs Advanced</h2>
-    <p class="mini">
-      LearnPulse is built to keep core learning free. Optional advanced offerings may be introduced over time
-      for users who want deeper structure and curated materials.
-    </p>
+<main class="container">
 
-    <div class="pricing" style="margin-top:14px;">
-      <div class="card pad price motion-in">
-        <h3>Free</h3>
-        <div class="cost">$0</div>
-        <ul class="list">
-          <li>Customizable learning feed</li>
-          <li>Skills, languages, tutorials</li>
-          <li>Pop culture & discovery</li>
-          <li>Suggestion box</li>
-          <li>Privacy-first design</li>
-        </ul>
-        <div class="smallprint">
-          Free content is educational and informational only.
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">FREE • PRO • SUPPORT</p>
+        <h1 class="h1">Keep LearnPulse free — upgrade only if you want.</h1>
+        <p class="sub">
+          LearnPulse is built to be a calm, privacy-first place to learn and discover.
+          The core platform stays free. Pro is optional for advanced content packs and deeper structures.
+          <b>Informational only.</b> Learning outcomes vary. <b>Results vary.</b>
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">No hype</span>
+          <span class="chip">Privacy-first</span>
+          <span class="chip">Optional upgrades</span>
+          <span class="chip">Support-driven</span>
+        </div>
+
+        <div class="disclaimer">
+          This is a learning and discovery platform. We do not guarantee results, earnings, or outcomes.
+          Informational only. Results vary.
+        </div>
+
+        <hr class="sep" />
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="/support.html">Suggestion Box</a>
+          <a class="btn ghost" href="/privacy.html">Privacy</a>
+          <a class="btn ghost" href="/disclaimer.html">Disclaimer</a>
         </div>
       </div>
 
-      <div class="card pad price motion-in" style="animation-delay:.05s;">
-        <h3>Advanced (Optional)</h3>
-        <div class="cost">Varies</div>
-        <ul class="list">
-          <li>Structured learning paths</li>
-          <li>Advanced theory and deeper explanations</li>
-          <li>Downloadable learning materials</li>
-          <li>Specialized courses (when available)</li>
-        </ul>
-        <div class="smallprint">
-          Advanced offerings do not guarantee outcomes, certifications, or results.
-          Learning results vary based on effort, focus, and practice.
+      <div class="card pad">
+        <div class="heroArt">
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>Value-first</b>
+            <div class="mini">Support keeps the lights on — not pressure.</div>
+          </div>
         </div>
 
-        <!-- Replace # with real checkout links when ready -->
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="#" onclick="alert('Checkout not connected yet. This is a demo page.')">View Advanced Options</a>
-          <a class="btn" href="/support">Ask a question</a>
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">🧾</div>
+          <div>
+            <b>What you’re paying for</b>
+            <div class="mini">Time, structure, and curated learning packs.</div>
+          </div>
+        </div>
+
+        <ul class="list">
+          <li>Optional advanced course packs (released over time)</li>
+          <li>Downloadable guides (when available)</li>
+          <li>Priority topic requests (community-driven)</li>
+        </ul>
+
+        <div class="mini" style="margin-top:10px;">
+          Note: This page contains placeholders for checkout until you connect a provider.
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="disclaimer">
-      LearnPulse does not provide professional advice. Content is educational and informational only.
-      Results vary depending on personal circumstances and effort.
-    </div>
-  </div>
-</section>
+  <!-- PRICING -->
+  <section class="section motion-in" id="pricing">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Plans</h2>
+          <p class="mini" style="margin:0;">
+            Choose Free for the core platform. Choose Pro only if you want advanced packs.
+          </p>
+        </div>
 
-<footer class="footer container">
-  <div class="footerGrid">
-    <div><b>LearnPulse</b><div class="mini">Keep learning, keep growing</div></div>
-    <div>
-      <div><a href="/">Home</a></div>
-      <div><a href="/privacy">Privacy</a></div>
-      <div><a href="/terms">Terms</a></div>
-      <div><a href="/disclaimer">Disclaimer</a></div>
-      <div><a href="/support">Support</a></div>
-      <div><a href="/donate">Donate</a></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" type="button" id="btnTop">Back to Top</button>
+          <a class="btn ghost" href="/learn.html">Go Learn</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="pricing">
+        <!-- FREE -->
+        <div class="card price">
+          <div class="badge good">Recommended</div>
+          <h3 style="margin-top:10px;">Free</h3>
+          <div class="cost">$0</div>
+          <div class="smallprint">Always available. No credit card.</div>
+
+          <ul class="list" style="margin-top:14px;">
+            <li>Basic Skills feed</li>
+            <li>Pop Culture feed (sample rotation)</li>
+            <li>Weekly Blue Focus Journal</li>
+            <li>Suggestion box access</li>
+          </ul>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="/learn.html">Start Free</a>
+            <a class="btn ghost" href="/blog.html">Browse Feed</a>
+          </div>
+
+          <div class="smallprint" style="margin-top:12px;">
+            Informational only. Results vary.
+          </div>
+        </div>
+
+        <!-- PRO -->
+        <div class="card price">
+          <div class="badge info">Optional</div>
+          <h3 style="margin-top:10px;">Pro</h3>
+          <div class="cost">$9/mo <span class="mini">or</span> $49/yr</div>
+          <div class="smallprint">Placeholder pricing (adjust anytime).</div>
+
+          <ul class="list" style="margin-top:14px;">
+            <li>Advanced learning packs (as released)</li>
+            <li>Premium guides + structured roadmaps</li>
+            <li>Priority topic requests (reviewed)</li>
+            <li>Early access to new features</li>
+          </ul>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <!-- Placeholder checkout -->
+            <button class="btn primary" type="button" id="btnCheckout">
+              Upgrade (Checkout Placeholder)
+            </button>
+            <a class="btn ghost" href="/support.html">Support Instead</a>
+          </div>
+
+          <div class="smallprint" style="margin-top:12px;">
+            No guaranteed outcomes. Informational only. Results vary.
+          </div>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <!-- SUPPORT / DONATE -->
+      <div class="grid" style="margin-top:6px;">
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">💙</div>
+            <div>
+              <b>Support LearnPulse</b>
+              <div class="mini">If you want to keep it free for everyone.</div>
+            </div>
+          </div>
+          <p class="mini">
+            Donations help cover hosting, tooling, and content creation time. This is optional.
+          </p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="/support.html#donate">Donate / Support</a>
+            <a class="btn ghost" href="/support.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">🔒</div>
+            <div>
+              <b>Privacy-first</b>
+              <div class="mini">We avoid creepy tracking.</div>
+            </div>
+          </div>
+          <p class="mini">
+            We keep this site lightweight and respectful. You control what you share.
+          </p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="/privacy.html">Privacy Policy</a>
+            <a class="btn ghost" href="/terms.html">Terms</a>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">✅</div>
+            <div>
+              <b>Transparency</b>
+              <div class="mini">No exaggerated claims.</div>
+            </div>
+          </div>
+          <p class="mini">
+            LearnPulse is informational and educational. Outcomes depend on effort, focus, and context.
+          </p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="/disclaimer.html">Read Disclaimer</a>
+            <a class="btn ghost" href="/support.html">Suggestion Box</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="mini">© 2026 LearnPulse</div>
-  </div>
-</footer>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  const btnTop = document.getElementById("btnTop");
+  const btnCheckout = document.getElementById("btnCheckout");
+
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  btnCheckout.addEventListener("click", () => {
+    alert(
+      "Checkout is not connected yet.\n\n" +
+      "Next step: link a payment provider (Stripe / Gumroad / LemonSqueezy) and replace this button with your real checkout URL.\n\n" +
+      "Informational only. Results vary."
+    );
+  });
+})();
+</script>
 
 </body>
 </html>

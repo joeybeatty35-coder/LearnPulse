@@ -1,126 +1,395 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>LearnPulse — Learn</title>
-  <meta name="description" content="LearnPulse Learn Hub: pick a track, build momentum, and keep it simple."/>
-  <style>
-    :root{--bg:#0b0f14;--card:#101826;--muted:#94a3b8;--text:#e5e7eb;--line:#1f2a3a}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg)}
-    a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:20px}
-    .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-    .pill{border:1px solid var(--line);padding:10px 12px;border-radius:999px;text-decoration:none;background:rgba(16,24,38,.6)}
-    .hero{margin-top:16px;border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(16,24,38,.55)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}
-    .card{grid-column:span 6;border:1px solid var(--line);border-radius:16px;padding:14px;background:rgba(16,24,38,.35)}
-    .card h2{margin:0 0 6px;font-size:16px}
-    .card p{margin:0;color:var(--muted);line-height:1.5}
-    .btn{display:inline-block;margin-top:10px;border:1px solid var(--line);padding:10px 12px;border-radius:12px;text-decoration:none}
-    .btn:hover{border-color:#2b3a52}
-    .full{grid-column:span 12}
-    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    select{background:#0f172a;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-    .small{color:var(--muted);font-size:13px;line-height:1.5}
-    @media (max-width:760px){.card{grid-column:span 12}}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learn — LearnPulse</title>
+  <meta name="description" content="LearnPulse Learn Page: basic skills, tutorials, and ethical learning paths for everyday and creative growth. Privacy-first. Informational only. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="top">
-      <a class="pill" href="/">← Command Center</a>
-      <div class="row">
-        <a class="pill" href="/focus">Focus</a>
-        <a class="pill" href="/blog">Blog</a>
-        <a class="pill" href="/support">Support</a>
-        <a class="pill" href="/privacy">Privacy</a>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <b>LearnPulse</b>
+        <span>Privacy-first learning + discovery</span>
       </div>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html" aria-current="page">Learn</a>
+      <a href="/blog.html">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/plans.html">Plans</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+
+    <div class="navcta">
+      <a class="btn ghost" href="/">Home</a>
+      <a class="btn primary" href="#feed">Start Learning</a>
     </div>
+  </div>
+</header>
 
-    <section class="hero">
-      <h1 style="margin:0">Learn Hub</h1>
-      <p class="small" style="margin:8px 0 0">
-        Choose a track. Keep it simple. Stack small wins daily.
-        <strong>Informational only — not professional advice.</strong>
-      </p>
-    </section>
+<main class="container">
 
-    <section class="grid">
-      <div class="card">
-        <h2>🌍 Languages</h2>
-        <p>Daily practice plans + resources + repetition strategy.</p>
-        <a class="btn" href="/blog">Start with Language posts →</a>
-      </div>
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">BASIC SKILLS • TUTORIALS • DISCOVERY</p>
+        <h1 class="h1">Learn something useful today — without the pressure.</h1>
+        <p class="sub">
+          Practical skills, creator notes, and ethical learning paths you can explore at your own pace.
+          <b>Informational only.</b> Learning outcomes vary based on effort, focus, and experience. <b>Results vary.</b>
+        </p>
 
-      <div class="card">
-        <h2>🧠 Study Skills</h2>
-        <p>Memory, focus, and learning techniques that fit real schedules.</p>
-        <a class="btn" href="/blog">Start with Study posts →</a>
-      </div>
-
-      <div class="card">
-        <h2>💻 Web & Tech</h2>
-        <p>Beginner-to-intermediate tutorials and practical build steps.</p>
-        <a class="btn" href="/blog">Start with Tech posts →</a>
-      </div>
-
-      <div class="card">
-        <h2>🤖 AI for Learning</h2>
-        <p>Use AI responsibly to accelerate learning and project completion.</p>
-        <a class="btn" href="/blog">Start with AI posts →</a>
-      </div>
-
-      <div class="card full" id="customize">
-        <h2>⚙️ Customize</h2>
-        <p class="small">Preferences save locally on your device (no account required).</p>
-        <div class="row">
-          <label>
-            Mode:
-            <select id="mode">
-              <option value="balanced">Balanced</option>
-              <option value="focus">Deep Focus</option>
-              <option value="fast">Fast Lessons</option>
-            </select>
-          </label>
-
-          <label>
-            Topic:
-            <select id="topic">
-              <option value="languages">Languages</option>
-              <option value="study">Study</option>
-              <option value="tech">Tech</option>
-              <option value="ai">AI</option>
-            </select>
-          </label>
-
-          <a class="btn" href="/focus">Open Focus</a>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">Privacy-first</span>
+          <span class="chip">No hype</span>
+          <span class="chip">Mobile-friendly</span>
+          <span class="chip">Value-first</span>
         </div>
 
-        <p class="small" id="saved" style="margin-top:10px"></p>
+        <div class="disclaimer">
+          This page contains general educational information. It is not professional advice (medical, legal, financial, or security).
+          Informational only. Results vary.
+        </div>
+
+        <hr class="sep" />
+
+        <div class="formRow">
+          <div>
+            <div class="label" for="category">Category</div>
+            <select class="select" id="category" aria-label="Filter category">
+              <option value="all">All</option>
+              <option value="digital">Digital Skills</option>
+              <option value="creative">Creative</option>
+              <option value="life">Life Skills</option>
+              <option value="career">Career</option>
+              <option value="security">Cyber Hygiene</option>
+            </select>
+          </div>
+
+          <div>
+            <div class="label" for="search">Search</div>
+            <input class="input" id="search" type="search" placeholder="Search lessons or topics…" autocomplete="off" />
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px;">
+          <span class="mini" id="metaLine">Showing starter lessons.</span>
+          <span class="badge info" id="freshness">Updated: local sample set</span>
+        </div>
       </div>
-    </section>
-  </div>
 
-  <script>
-    const mode = document.getElementById('mode');
-    const topic = document.getElementById('topic');
-    const saved = document.getElementById('saved');
+      <div class="card pad">
+        <div class="heroArt">
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>Learning, not rushing</b>
+            <div class="mini">Small skills build momentum over time.</div>
+          </div>
+        </div>
 
-    function load(){
-      mode.value = localStorage.getItem('lp_mode') || 'balanced';
-      topic.value = localStorage.getItem('lp_topic') || 'languages';
-      saved.textContent = `Saved: Mode = ${mode.value}, Topic = ${topic.value}`;
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">🧠</div>
+          <div>
+            <b>How to use this page</b>
+            <div class="mini">Pick a category, scan a lesson, take one small action.</div>
+          </div>
+        </div>
+
+        <ul class="list">
+          <li>Save ideas that stand out.</li>
+          <li>Practice one thing today.</li>
+          <li>Come back next week for new lessons.</li>
+        </ul>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+          <a class="btn ghost" href="/bluefocus.html">Read the Journal</a>
+          <a class="btn ghost" href="/support.html">Suggest a Lesson</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED -->
+  <section class="section motion-in" id="feed">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Starter Lessons</h2>
+          <p class="mini" style="margin:0;">
+            These are safe, beginner-friendly learning notes. Rotate weekly as traffic grows.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn" type="button" id="btnTop">Back to Top</button>
+          <a class="btn ghost" href="/plans.html">Plans</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="feedWrap" id="feedWrap" aria-live="polite"></div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">Lessons refreshed.</div>
+
+      <div class="disclaimer">
+        Cyber hygiene content is for awareness and defensive learning only. Practice only in systems you own or have explicit authorization to test.
+        Informational only. Results vary.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  const LESSONS = [
+    // Digital Skills
+    {
+      id: "d1",
+      cat: "digital",
+      tag: "Digital Skills",
+      badge: "info",
+      title: "How to organize your files so you stop losing work",
+      desc: "A simple folder structure that scales from phone to laptop without getting messy.",
+      note: "Tip: date-based folders reduce stress and searching time."
+    },
+    {
+      id: "d2",
+      cat: "digital",
+      tag: "Digital Skills",
+      badge: "info",
+      title: "Understanding cloud storage in plain language",
+      desc: "What sync means, what backup means, and why they are not the same thing.",
+      note: "Informational only. Results vary."
+    },
+
+    // Creative
+    {
+      id: "c1",
+      cat: "creative",
+      tag: "Creative",
+      badge: "good",
+      title: "Turning rough ideas into clean outlines",
+      desc: "A 10-minute method to go from brain dump to a clear structure.",
+      note: "Creator note: clarity beats complexity."
+    },
+    {
+      id: "c2",
+      cat: "creative",
+      tag: "Creative",
+      badge: "good",
+      title: "Why lighting matters more than camera quality",
+      desc: "Better light can upgrade any phone video without new gear.",
+      note: "Informational only. Results vary."
+    },
+
+    // Life Skills
+    {
+      id: "l1",
+      cat: "life",
+      tag: "Life Skills",
+      badge: "warn",
+      title: "A calm way to plan your week in under 15 minutes",
+      desc: "Focus on three priorities instead of a long, overwhelming list.",
+      note: "Wellness note: informational only, not medical advice."
+    },
+    {
+      id: "l2",
+      cat: "life",
+      tag: "Life Skills",
+      badge: "warn",
+      title: "How to reduce screen fatigue",
+      desc: "Small changes in brightness, posture, and breaks that protect your focus.",
+      note: "Informational only. Results vary."
+    },
+
+    // Career
+    {
+      id: "cr1",
+      cat: "career",
+      tag: "Career",
+      badge: "info",
+      title: "Writing a resume that’s easy to scan",
+      desc: "Use spacing, bullet points, and strong verbs so recruiters can find key info fast.",
+      note: "Informational only. Results vary."
+    },
+    {
+      id: "cr2",
+      cat: "career",
+      tag: "Career",
+      badge: "info",
+      title: "Interview prep without memorizing scripts",
+      desc: "Practice stories instead of answers to stay natural under pressure.",
+      note: "Informational only. Results vary."
+    },
+
+    // Cyber Hygiene (Defensive Only)
+    {
+      id: "s1",
+      cat: "security",
+      tag: "Cyber Hygiene",
+      badge: "warn",
+      title: "How to spot phishing without technical knowledge",
+      desc: "Red flags in emails and messages that often signal scams.",
+      note: "Defensive learning only. Authorized use only."
+    },
+    {
+      id: "s2",
+      cat: "security",
+      tag: "Cyber Hygiene",
+      badge: "warn",
+      title: "Why strong passwords still matter",
+      desc: "Simple ways to create unique passwords without memorizing dozens of them.",
+      note: "Defensive learning only. Informational only."
     }
-    function save(){
-      localStorage.setItem('lp_mode', mode.value);
-      localStorage.setItem('lp_topic', topic.value);
-      load();
+  ];
+
+  const feedWrap = document.getElementById("feedWrap");
+  const categoryEl = document.getElementById("category");
+  const searchEl = document.getElementById("search");
+  const btnTop = document.getElementById("btnTop");
+  const toast = document.getElementById("toast");
+  const metaLine = document.getElementById("metaLine");
+  const freshness = document.getElementById("freshness");
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, s => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    }[s]));
+  }
+
+  function badgeClass(kind){
+    if(kind === "good") return "badge good";
+    if(kind === "warn") return "badge warn";
+    return "badge info";
+  }
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
     }
-    mode.addEventListener('change', save);
-    topic.addEventListener('change', save);
-    load();
-  </script>
+    return a;
+  }
+
+  function nowLabel(){
+    const d = new Date();
+    return d.toLocaleString(undefined, { weekday:"short", hour:"2-digit", minute:"2-digit" });
+  }
+
+  function getFiltered(){
+    const cat = categoryEl.value;
+    const q = searchEl.value.trim().toLowerCase();
+    return LESSONS.filter(l => {
+      const catOk = (cat === "all") || (l.cat === cat);
+      const qOk = !q || (l.title.toLowerCase().includes(q) || l.desc.toLowerCase().includes(q) || l.tag.toLowerCase().includes(q));
+      return catOk && qOk;
+    });
+  }
+
+  function render(list){
+    const posts = list.length ? list : [];
+    feedWrap.innerHTML = posts.length ? posts.map(l => {
+      const tag = escapeHtml(l.tag);
+      const title = escapeHtml(l.title);
+      const desc = escapeHtml(l.desc);
+      const note = escapeHtml(l.note || "");
+      return `
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">${tag}</span>
+            <span class="${badgeClass(l.badge)}">Informational</span>
+          </div>
+          <div class="feedTitle">${title}</div>
+          <div class="feedDesc">${desc}</div>
+          <div class="aiLine" aria-hidden="true"></div>
+          <div class="mini" style="margin-top:10px;">${note}</div>
+        </article>
+      `;
+    }).join("") : `
+      <div class="card pad" style="box-shadow:none;">
+        <b>No results.</b>
+        <div class="mini" style="margin-top:6px;">Try clearing search or switching categories.</div>
+      </div>
+    `;
+
+    const total = getFiltered().length;
+    const shown = list.length;
+    metaLine.textContent = shown ? `Showing ${shown} lesson${shown===1?"":"s"} (${total} match${total===1?"":"es"}).` : "No matches found.";
+  }
+
+  function refresh(){
+    const filtered = getFiltered();
+    const rotated = shuffle(filtered);
+    render(rotated);
+    freshness.textContent = "Updated: " + nowLabel();
+    toast.style.display = "inline-flex";
+    clearTimeout(window.__lpToast);
+    window.__lpToast = setTimeout(()=> toast.style.display="none", 1600);
+  }
+
+  // Initial render
+  render(shuffle(LESSONS));
+
+  // Events
+  categoryEl.addEventListener("change", refresh);
+  searchEl.addEventListener("input", function(){
+    const filtered = shuffle(getFiltered());
+    render(filtered);
+  });
+  btnTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Optional weekly rotation (7 days)
+  setInterval(() => {
+    if(document.visibilityState === "visible"){
+      const filtered = shuffle(getFiltered());
+      render(filtered);
+      freshness.textContent = "Updated: " + nowLabel();
+    }
+  }, 7 * 24 * 60 * 60 * 1000);
+})();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LearnPulse — Trust Pack</title>
+  <meta name="description" content="LearnPulse Trust Pack: security overview, privacy & data handling, ethics charter, and incident response. Privacy-first, informational only." />
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="LearnPulse Home">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>LearnPulse</b>
+          <span>Privacy-first learning + discovery</span>
+        </div>
+      </a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus</a>
+        <a href="/plans.html">Plans</a>
+        <a href="/support.html">Support</a>
+      </nav>
+
+      <div class="navcta">
+        <a class="btn ghost" href="/privacy.html">Privacy</a>
+        <a class="btn primary" href="/disclaimer.html">Informational Only</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero motion-in">
+      <div class="heroGrid">
+        <div class="card pad">
+          <div class="kicker">Trust Pack</div>
+          <h1 class="h1">Security, Privacy, Ethics, and Operational Readiness</h1>
+          <p class="sub">
+            This page is a plain-language overview of how LearnPulse approaches security, privacy, content ethics,
+            and incident response. It’s designed for users, partners, and organizations evaluating LearnPulse.
+          </p>
+
+          <div class="chip" style="margin-bottom:10px;">Privacy-first • Minimal data • No guaranteed outcomes</div>
+          <div class="chip">Educational & informational only — results vary</div>
+
+          <div class="disclaimer">
+            <b>Important:</b> LearnPulse is an educational and informational platform. We do not provide legal, medical,
+            financial, or professional services. We do not guarantee outcomes (“Results vary”). For details, see
+            <a href="/terms.html">Terms</a> and <a href="/disclaimer.html">Disclaimer</a>.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="heroArt">
+            <img src="/assets/hero.jpg" alt="Cinematic blue neon abstract background" onerror="this.style.display='none'">
+            <div class="overlay" aria-hidden="true"></div>
+            <div class="artText">
+              <b>Enterprise-ready foundations</b>
+              <div class="mini">Clear boundaries, transparent policies, and ethical learning.</div>
+              <div class="mini" style="margin-top:8px;">
+                Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK NAV -->
+    <section class="section motion-in">
+      <div class="grid">
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <h2>Security Overview</h2>
+          </div>
+          <p class="mini">How we reduce risk and keep the platform reliable.</p>
+          <a class="btn" href="#security">Jump to Security</a>
+        </div>
+
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">🔒</div>
+            <h2>Privacy & Data Handling</h2>
+          </div>
+          <p class="mini">What we collect, what we avoid, and why.</p>
+          <a class="btn" href="#privacy">Jump to Privacy</a>
+        </div>
+
+        <div class="card pad">
+          <div class="iconTitle">
+            <div class="icon" aria-hidden="true">⚖️</div>
+            <h2>Ethics Charter</h2>
+          </div>
+          <p class="mini">Rules that keep content safe, legal, and trustworthy.</p>
+          <a class="btn" href="#ethics">Jump to Ethics</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <!-- SECURITY -->
+    <section id="security" class="section motion-in">
+      <div class="card pad">
+        <h2>🛡️ Security Overview</h2>
+        <p>
+          LearnPulse is built to be simple, transparent, and resilient. We minimize attack surface by keeping the public site
+          lightweight and avoiding unnecessary trackers, plugins, and paid API dependencies.
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card pad">
+            <div class="badge info">Design Principle</div>
+            <h3 style="margin:10px 0 6px;">Minimal Surface Area</h3>
+            <ul class="list">
+              <li>Static-first hosting on Vercel with GitHub version control</li>
+              <li>Reduced third-party scripts (lower supply-chain risk)</li>
+              <li>No hidden redirects or opaque embeds</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge info">Operational</div>
+            <h3 style="margin:10px 0 6px;">Availability & Reliability</h3>
+            <ul class="list">
+              <li>Fast global delivery via CDN-backed hosting</li>
+              <li>Atomic deploys (roll back by reverting commits)</li>
+              <li>Clear error handling and user-friendly fallbacks</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge warn">User Safety</div>
+            <h3 style="margin:10px 0 6px;">Content Guardrails</h3>
+            <ul class="list">
+              <li>No hacking/exploitation instructions</li>
+              <li>Cybersecurity content is defensive and authorized only</li>
+              <li>Educational framing + “results vary” expectations</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h3 style="margin:0 0 8px;">Security Commitments (Plain Language)</h3>
+        <ul class="list">
+          <li><b>We prioritize clarity</b> over “mystery features.”</li>
+          <li><b>We reduce risk</b> by limiting data collection and third-party dependencies.</li>
+          <li><b>We respond</b> to security reports in a structured, documented way (see Incident Response below).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="section motion-in">
+      <div class="card pad">
+        <h2>🔒 Privacy & Data Handling Summary</h2>
+        <p>
+          LearnPulse aims to be privacy-first. We avoid collecting personal data unless it is necessary for a feature
+          you explicitly request (for example, emailing you a link you asked for).
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card pad">
+            <div class="badge good">We Prefer</div>
+            <h3 style="margin:10px 0 6px;">Privacy-First Defaults</h3>
+            <ul class="list">
+              <li>No required account for basic browsing</li>
+              <li>Local-only preferences (device storage) where possible</li>
+              <li>Simple, readable policies you can understand</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge warn">We Avoid</div>
+            <h3 style="margin:10px 0 6px;">High-Risk Collection</h3>
+            <ul class="list">
+              <li>No selling personal data</li>
+              <li>No hidden tracking pixels</li>
+              <li>No biometric, location, or sensitive identity profiling</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge info">Transparency</div>
+            <h3 style="margin:10px 0 6px;">User Control</h3>
+            <ul class="list">
+              <li>Clear opt-in when collecting anything beyond basics</li>
+              <li>Delete/clear local settings via browser tools</li>
+              <li>Privacy policy always accessible</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h3 style="margin:0 0 8px;">What “Privacy-First” Means Here</h3>
+        <ul class="list">
+          <li><b>Minimal data:</b> collect less, retain less.</li>
+          <li><b>Purpose limitation:</b> only collect what is needed for the feature.</li>
+          <li><b>Respect:</b> no surprise data sharing.</li>
+        </ul>
+
+        <p class="mini" style="margin-top:12px;">
+          For the legal details, see <a href="/privacy.html">Privacy Policy</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ETHICS -->
+    <section id="ethics" class="section motion-in">
+      <div class="card pad">
+        <h2>⚖️ Ethics Charter</h2>
+        <p>
+          LearnPulse is “value-first.” We focus on skills, understanding, and responsible learning. We do not promote
+          deception, spam, illegal activity, or harmful use of technology.
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card pad">
+            <div class="badge info">Marketing Integrity</div>
+            <h3 style="margin:10px 0 6px;">No Deceptive Claims</h3>
+            <ul class="list">
+              <li>No guaranteed income claims</li>
+              <li>No “overnight success” promises</li>
+              <li>Always include “results vary” where relevant</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge warn">Cyber Safety</div>
+            <h3 style="margin:10px 0 6px;">Defensive Only</h3>
+            <ul class="list">
+              <li>No hacking, exploitation, or evasion instructions</li>
+              <li>Focus on prevention, awareness, and authorized testing</li>
+              <li>Encourage ethical conduct and lawful behavior</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge good">Education-First</div>
+            <h3 style="margin:10px 0 6px;">Learning Over Hype</h3>
+            <ul class="list">
+              <li>Teach frameworks and fundamentals</li>
+              <li>Encourage reflection and skill practice</li>
+              <li>Promote sustainable habits over shortcuts</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h3 style="margin:0 0 8px;">Acceptable Use Summary</h3>
+        <ul class="list">
+          <li>Use LearnPulse content for <b>personal learning</b> and <b>authorized</b> educational purposes.</li>
+          <li>Do not use LearnPulse materials to harm others, break laws, or violate platform terms.</li>
+          <li>If a topic becomes risky or dual-use, we may restrict or reframe it for safety.</li>
+        </ul>
+
+        <p class="mini" style="margin-top:12px;">
+          Full terms: <a href="/terms.html">Terms</a> • Safety boundary: <a href="/disclaimer.html">Disclaimer</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- INCIDENT RESPONSE -->
+    <section id="incident" class="section motion-in">
+      <div class="card pad">
+        <h2>🚨 Incident Response (Plain Language)</h2>
+        <p>
+          If we receive a credible report of a security or safety issue, we follow a structured response process focused on
+          user protection, transparency, and rapid remediation.
+        </p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card pad">
+            <div class="badge info">Step 1</div>
+            <h3 style="margin:10px 0 6px;">Receive & Triage</h3>
+            <ul class="list">
+              <li>Confirm scope and severity</li>
+              <li>Assess user impact</li>
+              <li>Log the incident internally</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge info">Step 2</div>
+            <h3 style="margin:10px 0 6px;">Contain & Fix</h3>
+            <ul class="list">
+              <li>Remove/disable risky content or components</li>
+              <li>Patch and redeploy</li>
+              <li>Verify resolution</li>
+            </ul>
+          </div>
+
+          <div class="card pad">
+            <div class="badge info">Step 3</div>
+            <h3 style="margin:10px 0 6px;">Communicate</h3>
+            <ul class="list">
+              <li>Notify affected users when appropriate</li>
+              <li>Publish a plain-language update if needed</li>
+              <li>Document lessons learned</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <h3 style="margin:0 0 8px;">Report a Security Concern</h3>
+        <p class="mini">
+          Email: <a href="mailto:learnpulse.app@gmail.com?subject=Security%20Report%20-%20LearnPulse">learnpulse.app@gmail.com</a><br/>
+          Please include: what you found, steps to reproduce (if safe), and any screenshots. Do not include private user data.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCUREMENT NOTES -->
+    <section class="section motion-in">
+      <div class="card pad">
+        <h2>🏢 Procurement / Organization Notes</h2>
+        <p>
+          LearnPulse can support organizational learning as a content and framework platform. If your organization requires
+          a formal review, we can provide a lightweight documentation set (security overview, privacy summary, ethics charter,
+          incident response outline) and discuss license boundaries.
+        </p>
+
+        <div class="formRow" style="margin-top:12px;">
+          <div>
+            <div class="label">Contact</div>
+            <div class="input" style="display:flex;align-items:center;gap:10px;">
+              <span>learnpulse.app@gmail.com</span>
+              <a class="btn" href="mailto:learnpulse.app@gmail.com?subject=Enterprise%20Inquiry%20-%20LearnPulse">Email</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="label">Quick Links</div>
+            <div class="prefs">
+              <a class="btn" href="/privacy.html">Privacy Policy</a>
+              <a class="btn" href="/terms.html">Terms</a>
+              <a class="btn" href="/disclaimer.html">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          LearnPulse does not provide professional services. Organizational use may require a business license.
+          Requests for custom implementation or consulting are handled as educational guidance only.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer motion-in">
+      <div class="container footerGrid">
+        <div>
+          <div class="brand" style="gap:10px; text-decoration:none">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <b>LearnPulse</b>
+              <div class="mini">Learn more by learning and applying.</div>
+            </div>
+          </div>
+          <div class="mini" style="margin-top:10px;">
+            © <span id="y"></span> LearnPulse. Informational only — results vary.
+          </div>
+        </div>
+
+        <div>
+          <div class="mini"><b>Pages</b></div>
+          <div class="mini" style="display:grid; gap:6px; margin-top:8px;">
+            <a href="/">Home</a>
+            <a href="/learn.html">Learn</a>
+            <a href="/blog.html">Pop Culture</a>
+            <a href="/bluefocus.html">Blue Focus</a>
+            <a href="/plans.html">Plans</a>
+            <a href="/support.html">Support</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="/disclaimer.html">Disclaimer</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="mini"><b>Contact</b></div>
+          <div class="mini" style="margin-top:8px;">
+            <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">
+            Tip: Bookmark this page for reviews.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

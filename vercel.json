@@ -3,7 +3,7 @@
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/blog/(.*)", "destination": "/blog.html" },
 
-    { "source": "/bluefocus", "destination": "/blue%20focus.html" },
-    { "source": "/bluefocus/(.*)", "destination": "/blue%20focus.html" }
+    { "source": "/bluefocus", "destination": "/bluefocus.html" },
+    { "source": "/bluefocus/(.*)", "destination": "/bluefocus.html" }
   ]
 }

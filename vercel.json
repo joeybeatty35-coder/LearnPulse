@@ -6,4 +6,4 @@
     { "source": "/bluefocus", "destination": "/blue%20focus.html" },
     { "source": "/bluefocus/(.*)", "destination": "/blue%20focus.html" }
   ]
-} 
+}

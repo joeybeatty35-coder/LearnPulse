@@ -1,16 +1,9 @@
 {
   "rewrites": [
-    { "source": "/bluefocus", "destination": "/bluefocus.html" },
-    { "source": "/bluefocus/(.*)", "destination": "/bluefocus.html" },
-
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/blog/(.*)", "destination": "/blog.html" },
 
-    { "source": "/learn", "destination": "/learn.html" },
-    { "source": "/plans", "destination": "/plans.html" },
-    { "source": "/support", "destination": "/support.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/disclaimer", "destination": "/disclaimer.html" }
+    { "source": "/bluefocus", "destination": "/blue focus.html" },
+    { "source": "/bluefocus/(.*)", "destination": "/blue focus.html" }
   ]
-} 
+}

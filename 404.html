@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LearnPulse — Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="This page doesn’t exist — but your learning journey continues. Return to LearnPulse and explore knowledge, journals, and discovery." />
+
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(900px 400px at 20% -10%, rgba(122,167,255,.22), transparent 60%),
+        radial-gradient(700px 300px at 80% 10%, rgba(155,231,255,.18), transparent 60%),
+        #0b0f17;
+    }
+
+    .lostWrap {
+      max-width: 640px;
+      width: 92%;
+      text-align: center;
+    }
+
+    .lostCard {
+      padding: 28px;
+    }
+
+    .pulseLogo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 20px;
+      background: url("/assets/logo.png") center / contain no-repeat;
+      box-shadow: 0 0 40px rgba(122,167,255,.35);
+      animation: glow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 18px rgba(122,167,255,.25); }
+      50% { box-shadow: 0 0 42px rgba(155,231,255,.45); }
+      100% { box-shadow: 0 0 18px rgba(122,167,255,.25); }
+    }
+
+    .lostCode {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin: 8px 0;
+      background: linear-gradient(145deg, #7aa7ff, #9be7ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lostText {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .lostMini {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+
+    .lostActions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lostWrap motion-in">
+    <div class="card lostCard">
+
+      <div class="pulseLogo" aria-hidden="true"></div>
+
+      <div class="lostCode">404</div>
+      <div class="lostText">You’ve reached an unknown path.</div>
+
+      <div class="lostMini">
+        The page you’re looking for doesn’t exist — or it moved.
+        LearnPulse is an educational and discovery platform.  
+        <strong>Informational only. Results vary based on individual effort and context.</strong>
+      </div>
+
+      <div class="lostActions">
+        <a href="/" class="btn primary" data-track="404_home">Return Home</a>
+        <a href="/learn.html" class="btn ghost" data-track="404_learn">Start Learning</a>
+        <a href="/bluefocus.html" class="btn ghost" data-track="404_journal">Weekly Journal</a>
+        <a href="/support.html" class="btn ghost" data-track="404_support">Get Support</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/assets/js/track-client.js" defer></script>
+
+</body>
+</html>

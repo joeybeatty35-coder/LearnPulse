@@ -1,5 +1,12 @@
-Txt
+# LearnPulse — Search Engine Instructions
+# Privacy-first, educational, informational platform
+# Results vary. Informational only.
+
 User-agent: *
 Allow: /
 
-Sitemap: https://learn-pulse-lilac.vercel.app/sitemap.xml
+# Block server and system routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://learnpulse.app/sitemap.xml

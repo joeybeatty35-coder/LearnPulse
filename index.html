@@ -1,199 +1,732 @@
-<!doctype html>
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LearnPulse — Learn Smarter. Stay Current.</title>
-  <meta name="description" content="LearnPulse: privacy-first learning + discovery. Tutorials, languages, and a calm knowledge feed. Informational only—no guarantees." />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/assets/logo.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnPulse – Learn Smarter, Not Louder</title>
+  <meta
+    name="description"
+    content="LearnPulse helps you learn skills, languages, and complex topics with calm, realistic guidance – plus tutorials, pop-culture breakdowns, and tools for creators."
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020b24;
+      --accent: #1e88ff;
+      --accent-soft: #0ea5e9;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #020b24;
+      --border: #1f2937;
+      --danger: #f97373;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #020b24 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.85),
+        transparent
+      );
+      padding: 0.75rem 0.25rem 0.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at top, #38bdf8, #1e88ff 55%, #0b1120);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.7);
+    }
+
+    .brand-logo span {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #e0f2fe;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text strong {
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text small {
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+    }
+
+    nav a {
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    nav a.highlight {
+      border-color: rgba(56, 189, 248, 0.8);
+      color: #e0f2fe;
+      background: radial-gradient(
+        circle at top left,
+        rgba(56, 189, 248, 0.18),
+        rgba(15, 23, 42, 0.95)
+      );
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      margin-top: 0.75rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .badge span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      margin-bottom: 0.65rem;
+    }
+
+    h1 span.accent {
+      background: linear-gradient(120deg, #38bdf8, #c4b5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p.lead {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease,
+        border-color 0.08s ease;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #1e88ff 60%, #0b1120);
+      border-color: rgba(56, 189, 248, 0.9);
+      color: #e0f2fe;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9),
+        0 0 20px rgba(56, 189, 248, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-footnote {
+      font-size: 0.75rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .hero-footnote strong {
+      color: #e5e7eb;
+    }
+
+    /* HERO CARD */
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, #0f172a, #020617 55%, #000 100%);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 1.1rem 1.1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-chip {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(96, 165, 250, 0.7);
+      color: #bfdbfe;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+      font-size: 0.78rem;
+    }
+
+    .hero-card-pill {
+      border-radius: 12px;
+      padding: 0.6rem 0.65rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .hero-card-pill strong {
+      font-size: 0.8rem;
+    }
+
+    .hero-card-pill span {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .hero-card-footer {
+      margin-top: 0.85rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed rgba(55, 65, 81, 0.9);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* GENERIC SECTIONS */
+    .section {
+      margin-bottom: 2.2rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #020b24, #020617 55%, #000 100%);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 1.5rem 1.4rem 1.6rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .section-header {
+      margin-bottom: 0.9rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-header p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+    }
+
+    .pill {
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      border-radius: 14px;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      background: rgba(2, 6, 23, 0.95);
+      padding: 0.9rem 0.9rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul {
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding-left: 1.1rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* SUPPORT SECTION */
+    .support-section {
+      text-align: center;
+      background: radial-gradient(circle at top, #020b24, #020617 55%, #000 100%);
+    }
+
+    .support-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .support-section p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin: 0 auto 0.9rem;
+    }
+
+    .support-note {
+      margin-top: 0.7rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    footer p + p {
+      margin-top: 0.3rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        padding-left: 0.2rem;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="LearnPulse Home">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <b>LearnPulse</b>
-          <span>Privacy-first learning + discovery</span>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <span>L</span>
         </div>
-      </a>
-
-      <nav class="navlinks" aria-label="Primary">
-        <a href="/learn.html">Learn</a>
-        <a href="/blog.html">Pop Culture</a>
-        <a href="/focus.html">Focus</a>
-        <a href="/plans.html">Plans</a>
-        <a href="/support.html">Support</a>
-      </nav>
-
-      <div class="navcta">
-        <a class="btn ghost" href="/plans.html">See Plans</a>
-        <a class="btn primary" href="#start">Start Here</a>
+        <div class="brand-text">
+          <strong>LearnPulse</strong>
+          <small>Learn the history, language & elements of anything.</small>
+        </div>
       </div>
-    </div>
-  </header>
+      <nav>
+        <a href="#learn">Learn</a>
+        <a href="#languages">Languages</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#blog">Articles</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#support" class="highlight">Support</a>
+      </nav>
+    </header>
 
-  <main class="container">
-
-    <!-- HERO / FRONT DOOR -->
-    <section class="hero motion-in" id="start">
-      <div class="heroGrid">
-        <div class="card pad">
-          <div class="chip">Informational only • Results vary</div>
-          <p class="kicker">LEARN • DISCOVER • STAY CURRENT</p>
-          <h1 class="h1">One calm feed for skills, languages, and what’s trending.</h1>
-          <p class="sub">
-            LearnPulse helps you explore tutorials and knowledge in a privacy-first way.
-            No hype, no guarantees—just useful starting points, curated topics, and simple learning paths.
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span></span>
+            LearnPulse • Calm, realistic learning — no hype.
+          </div>
+          <h1>
+            Learn faster by understanding the
+            <span class="accent">history, language & elements</span> behind every skill.
+          </h1>
+          <p class="lead">
+            LearnPulse breaks complex skills, tools, and real-world problems into simple,
+            repeatable plays — for creators, learners, and people rebuilding their life
+            one step at a time.
           </p>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-            <a class="btn primary" href="/learn.html">Start Learning</a>
-            <a class="btn" href="/blog.html">Pop Culture Feed</a>
-            <a class="btn" href="/focus.html">Focus Mode</a>
+          <div class="hero-actions">
+            <a href="#learn" class="btn btn-primary">Start Learning the Basics</a>
+            <a href="#support" class="btn btn-ghost">Support the Free Content</a>
           </div>
 
-          <div class="disclaimer">
-            <b>Note:</b> LearnPulse is informational and educational only — not professional advice.
-            Your outcomes depend on effort, experience, and context. <span class="mini">Results vary.</span>
-          </div>
+          <p class="hero-footnote">
+            <strong>No hype, no guaranteed results.</strong> Just clear frameworks,
+            story-driven lessons, and tools you can adapt to your own situation.
+          </p>
         </div>
 
-        <aside class="card pad heroArt" aria-label="LearnPulse visual">
-          <img src="/assets/branding-pack.png" alt="LearnPulse cinematic branding" onerror="this.style.display='none';" />
-          <div class="overlay"></div>
-          <div class="artText">
-            <b>Welcome to LearnPulse</b>
-            <div class="mini">Blue neon cinematic style • clean, calm UI</div>
+        <aside class="hero-card" aria-label="LearnPulse playbook summary">
+          <div class="hero-card-header">
+            <div class="hero-card-title">The Root of Learning – 3 Pillars</div>
+            <div class="hero-chip">Film-room style learning</div>
+          </div>
+          <div class="hero-card-grid">
+            <div class="hero-card-pill">
+              <strong>History</strong>
+              <span>Where did this skill, system, or problem come from? What broke before?</span>
+            </div>
+            <div class="hero-card-pill">
+              <strong>Language</strong>
+              <span>Words, labels, and stories that control how we think and react.</span>
+            </div>
+            <div class="hero-card-pill">
+              <strong>Elements</strong>
+              <span>Break complex topics into small, observable pieces you can practice.</span>
+            </div>
+            <div class="hero-card-pill">
+              <strong>Playbook</strong>
+              <span>Turn it into simple plays you can run even when life gets chaotic.</span>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            Use LearnPulse as your quiet film room. Study your life, your skills, and your
+            money like game tape — with no shame, just better strategy.
           </div>
         </aside>
-      </div>
-    </section>
+      </section>
 
-    <!-- 3 PATHS -->
-    <section class="section motion-in">
-      <h2>Your first 60 seconds (pick one)</h2>
-      <p>Choose a path. You can customize later.</p>
-
-      <div class="grid">
-        <div class="card pad">
-          <div class="iconTitle"><div class="icon">📚</div><b>Basic Skills</b></div>
-          <p class="mini">Beginner-friendly tutorials + skill discovery.</p>
-          <a class="btn" href="/learn.html">Go to Learn</a>
+      <!-- LEARN SECTION -->
+      <section id="learn" class="section">
+        <div class="section-header">
+          <h2>What You Can Learn Here</h2>
+          <p>
+            A calm place to learn skills, tools, and life systems without noise, fake promises,
+            or information overload.
+          </p>
         </div>
 
-        <div class="card pad">
-          <div class="iconTitle"><div class="icon">🎬</div><b>Pop Culture</b></div>
-          <p class="mini">Movies, music, gaming, and trending topics (informational).</p>
-          <a class="btn" href="/blog.html">Open Feed</a>
-        </div>
-
-        <div class="card pad">
-          <div class="iconTitle"><div class="icon">🧠</div><b>Focus Mode</b></div>
-          <p class="mini">Simple routines and “one thing at a time” learning blocks.</p>
-          <a class="btn" href="/focus.html">Enter Focus</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EMAIL CAPTURE (Phase 2 will wire it) -->
-    <section class="section motion-in" id="join">
-      <div class="card pad">
-        <h2>Join the free weekly digest</h2>
-        <p>Get a calm summary of new topics + featured learning paths. No spam. Unsubscribe anytime.</p>
-
-        <form id="newsletterForm">
-          <label class="label" for="email">Email</label>
-          <input class="input" id="email" name="email" type="email" placeholder="you@example.com" required />
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <button class="btn primary" type="submit">Subscribe</button>
-            <a class="btn" href="/privacy.html">Privacy Policy</a>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Skills & Systems</h3>
+            <p>Short, focused breakdowns built from the Root of Learning method.</p>
+            <ul>
+              <li>How to learn any new skill without burning out.</li>
+              <li>Simple study systems for busy adults.</li>
+              <li>Digital skills, creator tools, and real-world problem-solving.</li>
+            </ul>
           </div>
 
-          <div id="toast" class="toast">Saved locally for now. (Wiring email send comes next.)</div>
-          <p class="smallprint">Informational only. Results vary. We don’t sell personal data.</p>
-        </form>
-      </div>
-    </section>
+          <div class="card">
+            <h3>Psychology & Money Behavior</h3>
+            <p>
+              Not financial advice — just the psychology of how people think, feel, and act
+              around money.
+            </p>
+            <ul>
+              <li>Money stories from childhood & culture.</li>
+              <li>Spending triggers, guilt, and self-sabotage.</li>
+              <li>Building calm routines and backup plans.</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- PRODUCT / MONETIZATION (Phase 3 will wire checkout links) -->
-    <section class="section motion-in" id="support">
-      <h2>Support LearnPulse (optional)</h2>
-      <p>Keep the platform free. Upgrade when you want advanced packs.</p>
+        <div class="section-header" style="margin-top: 1.1rem;">
+          <p style="font-size: 0.78rem;">
+            Informational only. Results vary. Nothing on LearnPulse is financial, medical,
+            tax, or legal advice.
+          </p>
+        </div>
+      </section>
 
-      <div class="pricing">
-        <div class="card pad price">
-          <h3>Free</h3>
-          <div class="cost">$0</div>
-          <ul class="list">
-            <li>Learning paths + starter feed</li>
-            <li>Privacy-first experience</li>
-            <li>Basic weekly updates</li>
+      <!-- LANGUAGES -->
+      <section id="languages" class="section">
+        <div class="section-header">
+          <h2>Languages & Communication</h2>
+          <p>
+            Learn how language shapes your thinking — for everyday conversations, business,
+            content creation, and learning new tongues.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Everyday & Business Language</h3>
+            <p>Small scripts and phrases you can actually use in real life.</p>
+            <ul>
+              <li>Clear, respectful communication at work.</li>
+              <li>How to ask better questions and avoid drama.</li>
+              <li>Framing hard conversations as “we vs. the problem”.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Learning New Languages</h3>
+            <p>Root of Learning applied to speaking and understanding faster.</p>
+            <ul>
+              <li>Micro-routines you can do in 10–15 minutes a day.</li>
+              <li>Listening, speaking, and vocabulary flows.</li>
+              <li>Future mini-courses and phrase packs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- TUTORIALS & POP CULTURE -->
+      <section id="tutorials" class="section">
+        <div class="section-header">
+          <h2>Tutorials, Pop Culture & Creator Tools</h2>
+          <p>
+            Breakdowns of tools, apps, and media — so you can learn by watching how stories,
+            systems, and creators really work.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Creator & Tech Tutorials</h3>
+            <p>Step-by-step guides without the overwhelm.</p>
+            <ul>
+              <li>Basic setups for YouTube, TikTok, and podcasting.</li>
+              <li>Low-budget gear and workflows for beginners.</li>
+              <li>Automation ideas that save time, not your soul.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Story & Film-Room Breakdowns</h3>
+            <p>
+              Use movies, shows, and real-life scenes as “film room” study tapes for life,
+              learning, and money psychology.
+            </p>
+            <ul>
+              <li>Quiet, tense moments vs. explosive scenes.</li>
+              <li>Character decisions and consequences.</li>
+              <li>How to borrow structure for your own projects.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG PREVIEW -->
+      <section id="blog" class="section">
+        <div class="section-header">
+          <h2>Articles & Playbooks</h2>
+          <p>
+            Deeper dives into specific topics — from money mindset and learning systems
+            to creator case studies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>LearnPulse Blog</h3>
+          <p>
+            Read story-driven breakdowns and step-by-step guides. Each article follows the
+            History • Language • Elements framework so you can understand the problem,
+            how people talk about it, and what to do next.
+          </p>
+          <p style="font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem;">
+            Visit: <a href="/blog" style="color: #93c5fd;">learnpulse.app/blog</a>
+            (articles are being added and updated over time).
+          </p>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section id="newsletter" class="section">
+        <div class="section-header">
+          <h2>Stay in the Loop</h2>
+          <p>
+            A low-noise email update when new tutorials, playbooks, or digital products
+            drop — plus behind-the-scenes notes from Iron Road Productions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Newsletter (Coming Soon)</h3>
+          <p>
+            We’re wiring up the email system and automation now. For the moment, you can
+            subscribe on YouTube and TikTok to see new content first.
+          </p>
+          <ul>
+            <li>Iron Road Productions – YouTube</li>
+            <li>@ironroadproductions – TikTok</li>
           </ul>
-          <a class="btn primary" href="/learn.html">Use Free</a>
-          <div class="smallprint">No guarantees. Informational only.</div>
+          <p style="font-size: 0.76rem; color: var(--muted); margin-top: 0.4rem;">
+            Once the newsletter is live, this box will let you join with one click — no
+            spam, no pressure.
+          </p>
         </div>
+      </section>
 
-        <div class="card pad price">
-          <h3>Pro (Pilot)</h3>
-          <div class="cost">$9–$19</div>
-          <ul class="list">
-            <li>Advanced packs (PDF)</li>
-            <li>Bonus templates</li>
-            <li>Priority feature requests</li>
-          </ul>
-          <a class="btn" href="/plans.html">View Pro Options</a>
-          <div class="smallprint">Results vary. Defensive/ethical use only (for cybersecurity topics).</div>
-        </div>
-      </div>
+      <!-- SUPPORT / TIP JAR -->
+      <section id="support" class="section support-section">
+        <h2>Support the Free Content</h2>
+        <p>
+          LearnPulse and Iron Road Productions are built slowly, with real care. If the
+          tutorials, breakdowns, or stories help you, you can leave a tip to keep the
+          lights on and fund new projects.
+        </p>
 
-      <hr class="sep" />
+        <a
+          href="https://www.paypal.com/ncp/payment/W57TAJS72A2UU"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          ❤️ Tip Jar via PayPal
+        </a>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" href="/donate.html">Donate</a>
-        <a class="btn" href="/support.html">Support</a>
-        <a class="btn" href="mailto:learnpulse.app@gmail.com">Contact</a>
-      </div>
-    </section>
+        <p class="support-note">
+          Tips are optional and deeply appreciated. Thank you for supporting the work.
+        </p>
+      </section>
+    </main>
 
-    <footer class="footer">
-      <div class="footerGrid">
-        <div>
-          <b>LearnPulse</b>
-          <div class="mini">Educational + discovery-focused learning. Informational only.</div>
-        </div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="/privacy.html">Privacy</a>
-          <a href="/terms.html">Terms</a>
-          <a href="/disclaimer.html">Disclaimer</a>
-          <a href="/support.html">Support</a>
-        </div>
-      </div>
+    <footer>
+      <p>
+        LearnPulse & Iron Road Productions — educational content only.
+        Nothing here is financial, medical, tax, or legal advice. Results vary.
+      </p>
+      <p>&copy; <span id="year"></span> LearnPulse. All rights reserved.</p>
     </footer>
-
-  </main>
+  </div>
 
   <script>
-    // Phase 2 will replace this with real email capture.
-    // For now: local-only save so the UI works immediately.
-    const form = document.getElementById('newsletterForm');
-    const toast = document.getElementById('toast');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      if (!email) return;
-      try {
-        const existing = JSON.parse(localStorage.getItem('lp_emails') || '[]');
-        existing.push({ email, ts: Date.now() });
-        localStorage.setItem('lp_emails', JSON.stringify(existing));
-        toast.style.display = 'block';
-        setTimeout(()=> toast.style.display = 'none', 2500);
-        form.reset();
-      } catch {}
-    });
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+    

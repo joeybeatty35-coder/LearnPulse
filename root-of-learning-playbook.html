@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Root of Learning Playbook – LearnPulse</title>
+  <meta
+    name="description"
+    content="The Root of Learning Playbook: a calm, practical guide to learning skills, systems, and money psychology using the History • Language • Elements method."
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020b24;
+      --accent: #1e88ff;
+      --accent-soft: #0ea5e9;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #020b24;
+      --border: #1f2937;
+      --danger: #f97373;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #020b24 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3.5rem;
+    }
+
+    /* NAVBAR (same as index.html) */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.85),
+        transparent
+      );
+      padding: 0.75rem 0.25rem 0.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: radial-gradient(circle at top, #38bdf8, #1e88ff 55%, #0b1120);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.7);
+    }
+
+    .brand-logo span {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #e0f2fe;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text strong {
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text small {
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+    }
+
+    nav a {
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    nav a.highlight {
+      border-color: rgba(56, 189, 248, 0.8);
+      color: #e0f2fe;
+      background: radial-gradient(
+        circle at top left,
+        rgba(56, 189, 248, 0.18),
+        rgba(15, 23, 42, 0.95)
+      );
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
+    }
+
+    /* LAYOUT */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+      margin-top: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .badge span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      margin-bottom: 0.65rem;
+    }
+
+    h1 span.accent {
+      background: linear-gradient(120deg, #38bdf8, #c4b5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 0.7rem;
+    }
+
+    .hero-meta strong {
+      color: #e5e7eb;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease,
+        border-color 0.08s ease;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #1e88ff 60%, #0b1120);
+      border-color: rgba(56, 189, 248, 0.9);
+      color: #e0f2fe;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9),
+        0 0 20px rgba(56, 189, 248, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-note {
+      margin-top: 0.7rem;
+      font-size: 0.76rem;
+      color: var(--muted);
+      max-width: 30rem;
+    }
+
+    .hero-note strong {
+      color: #e5e7eb;
+    }
+
+    .product-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top, #0f172a, #020617 55%, #000 100%);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 1.1rem 1.1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .product-card h2 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .product-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .price-main {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .price-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .list {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-left: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .secure-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      border-top: 1px dashed rgba(51, 65, 85, 0.9);
+      padding-top: 0.5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #020b24, #020617 55%, #000 100%);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 1.5rem 1.4rem 1.6rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+      font-size: 0.82rem;
+    }
+
+    .section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section p {
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .section ul {
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .section ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .warning {
+      color: var(--danger);
+      font-size: 0.76rem;
+      margin-top: 0.4rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    footer p + p {
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        padding-left: 0.2rem;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <span>L</span>
+        </div>
+        <div class="brand-text">
+          <strong>LearnPulse</strong>
+          <small>Film-room style learning for real life.</small>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#learn">Learn</a>
+        <a href="index.html#blog">Articles</a>
+        <a href="#buy" class="highlight">Get the Playbook</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO / SALES COPY -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span></span>
+            Digital Playbook • PDF Download
+          </div>
+          <h1>
+            The <span class="accent">Root of Learning Playbook</span><br />
+            for Real Life, Not Just Textbooks.
+          </h1>
+          <p class="lead">
+            A calm, no-hype guide that shows you how to learn skills, fix broken systems,
+            and study your own life like game tape — using the History • Language • Elements
+            method behind LearnPulse.
+          </p>
+
+          <div class="hero-meta">
+            <span><strong>Format:</strong> PDF (print-friendly) + checklist</span><br />
+            <span><strong>Length:</strong> Short, focused — designed to be read in one sitting</span><br />
+            <span><strong>Price:</strong> $20 USD</span>
+          </div>
+
+          <a
+            id="buy"
+            href="https://www.paypal.com/ncp/payment/W57TAJS72A2UU"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Buy the Playbook – $20 via PayPal
+          </a>
+
+          <p class="hero-note">
+            After checkout, PayPal will email you a receipt.
+            <strong>For now, forward that receipt to learnpulse.app@gmail.com</strong> and you’ll
+            receive your download link manually while we finish automating instant delivery.
+          </p>
+          <p class="hero-note">
+            No subscriptions. No “get rich quick” promises. Just a clear framework you can
+            reuse across skills, projects, and seasons of your life.
+          </p>
+        </div>
+
+        <!-- PRODUCT SUMMARY CARD -->
+        <aside class="product-card">
+          <h2>What You Get Inside</h2>
+          <p>A compact playbook built to be used, not just read once and forgotten.</p>
+
+          <div class="price-row">
+            <div class="price-main">$20</div>
+            <div class="price-note">One-time purchase • PDF</div>
+          </div>
+
+          <ul class="list">
+            <li>
+              <strong>History, Language, Elements</strong> explained in plain language with
+              real examples.
+            </li>
+            <li>
+              A step-by-step process to build your own “film room” — how to review your
+              choices, habits, and money patterns without shaming yourself.
+            </li>
+            <li>
+              7-day starter plan: small actions to test the method in real life while you
+              work, study, or rebuild.
+            </li>
+            <li>
+              Printable checklists and reflection prompts you can revisit each season.
+            </li>
+            <li>
+              “Batman backup” section — how to keep learning and adjusting even when life or
+              the economy gets rough.
+            </li>
+          </ul>
+
+          <a
+            href="https://www.paypal.com/ncp/payment/W57TAJS72A2UU"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            style="width: 100%; justify-content: center; margin-top: 0.4rem;"
+          >
+            Checkout Securely via PayPal
+          </a>
+
+          <p class="secure-note">
+            Payments are processed by PayPal. LearnPulse never sees your card details.
+            For now, delivery is manual via email while we connect full automation.
+          </p>
+        </aside>
+      </section>
+
+      <!-- WHAT'S INSIDE -->
+      <section class="section">
+        <h2>What’s Actually Inside the Playbook?</h2>
+        <p>
+          This isn’t a giant textbook or a “10,000 secrets” PDF. It’s a tight, practical
+          guide that you can come back to every time life changes or a system breaks.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Part 1 — History:</strong> How skills, systems, and money patterns are
+            born, grow, and fall apart. Includes questions to map your own history *
+            without* shaming yourself.
+          </li>
+          <li>
+            <strong>Part 2 — Language:</strong> The phrases that quietly control your
+            behavior (“I’m just bad with X”, “I’ll start when…”), plus replacement language
+            that’s honest but less destructive.
+          </li>
+          <li>
+            <strong>Part 3 — Elements:</strong> How to break any complex thing into small,
+            observable pieces you can practice: skills, daily routines, projects, and even
+            your relationship with money or work.
+          </li>
+          <li>
+            <strong>Part 4 — Film Room Protocol:</strong> A calm review process you can run
+            weekly or monthly, like watching game tape. No perfection, just better reads and
+            better decisions over time.
+          </li>
+          <li>
+            <strong>Part 5 — Antifragile / Batman Backup:</strong> How to keep learning and
+            adjusting even when income drops, platforms change, or life gets chaotic.
+          </li>
+        </ul>
+
+        <p class="warning">
+          Important: This is educational and reflective, not professional financial, tax,
+          legal, or medical advice. Results vary person to person.
+        </p>
+      </section>
+
+      <!-- WHO IT'S FOR -->
+      <section class="section">
+        <h2>Who This Is For (and Not For)</h2>
+        <p>
+          This playbook is for people who are tired of hype, fake certainty, and “just work
+          harder” advice — especially if you’ve lived through poverty, chaos, or constant
+          restarts.
+        </p>
+
+        <ul>
+          <li>
+            You like the idea of treating your life like a film room — watching the tape,
+            learning, and trying again with better reads.
+          </li>
+          <li>
+            You want small, concrete actions, not guilt and magic thinking.
+          </li>
+          <li>
+            You’re okay with the truth: the economy, health, and luck all matter — but your
+            habits and language matter too.
+          </li>
+        </ul>
+
+        <p style="margin-top: 0.5rem;">
+          It’s <strong>not</strong> for anyone looking for guaranteed results, lottery-ticket
+          thinking, or high-pressure “10x” promises.
+        </p>
+      </section>
+
+      <!-- HOW DELIVERY WORKS -->
+      <section class="section">
+        <h2>How Delivery Works (Current Version)</h2>
+        <p>
+          While we finish wiring full automation (instant downloads, logins, etc.), the
+          delivery process is simple:
+        </p>
+
+        <ul>
+          <li>1. Click any “Buy” button on this page.</li>
+          <li>2. Complete the $20 payment securely through PayPal.</li>
+          <li>
+            3. PayPal sends you a receipt by email. Forward that email to:
+            <strong>learnpulse.app@gmail.com</strong>.
+          </li>
+          <li>
+            4. You’ll receive a reply with your personal download link to the PDF, usually
+            within 24 hours.
+          </li>
+        </ul>
+
+        <p style="margin-top: 0.5rem;">
+          Once Stripe and full automation are live, this page will be updated so downloads
+          trigger instantly after checkout.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        LearnPulse & Iron Road Productions — educational content only.
+        Nothing here is financial, medical, tax, or legal advice. Results vary.
+      </p>
+      <p>&copy; <span id="year"></span> LearnPulse. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

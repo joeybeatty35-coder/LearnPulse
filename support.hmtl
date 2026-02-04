@@ -1,141 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Support — LearnPulse</title>
-  <meta name="description" content="Support LearnPulse: suggestion box, donate/support options, and contact. Privacy-first. Informational only. Results vary." />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/assets/logo.png" />
-</head>
 
-<body>
-
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="/" aria-label="LearnPulse Home">
-      <div class="logo" aria-hidden="true"></div>
-      <div>
-        <b>LearnPulse</b>
-        <span>Privacy-first learning + discovery</span>
-      </div>
-    </a>
-
-    <nav class="navlinks" aria-label="Primary">
-      <a href="/learn.html">Learn</a>
-      <a href="/blog.html">Pop Culture</a>
-      <a href="/bluefocus.html">Blue Focus Journal</a>
-      <a href="/plans.html">Plans</a>
-      <a href="/support.html" aria-current="page">Support</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
-
-    <div class="navcta">
-      <a class="btn ghost" href="/">Home</a>
-      <a class="btn primary" href="#suggest">Suggestion Box</a>
-    </div>
-  </div>
-</header>
-
-<main class="container">
-
-  <!-- HERO -->
-  <section class="hero motion-in">
-    <div class="heroGrid">
-      <div class="card pad">
-        <p class="kicker">SUPPORT • SUGGESTIONS • COMMUNITY</p>
-        <h1 class="h1">Help shape LearnPulse.</h1>
-        <p class="sub">
-          Want a topic covered? Found a bug? Have an idea for the feed?
-          Drop it below. This is a privacy-first site, so we keep forms simple.
-          <b>Informational only.</b> Outcomes vary. <b>Results vary.</b>
-        </p>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
-          <span class="chip">Value-first</span>
-          <span class="chip">No spam</span>
-          <span class="chip">Privacy-first</span>
-          <span class="chip">Human feedback</span>
-        </div>
-
-        <div class="disclaimer">
-          Note: This page is informational. Suggestions are reviewed and may or may not be implemented.
-          Please don’t share sensitive personal data. Results vary.
-        </div>
-
-        <hr class="sep" />
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="#donate">Donate / Support</a>
-          <a class="btn ghost" href="#contact">Contact</a>
-          <a class="btn ghost" href="/plans.html">Plans</a>
-        </div>
-      </div>
-
-      <div class="card pad">
-        <div class="heroArt">
-          <img src="/assets/logo.png" alt="LearnPulse" />
-          <div class="overlay"></div>
-          <div class="artText">
-            <b>Keep it calm</b>
-            <div class="mini">Build a better feed, one honest suggestion at a time.</div>
-          </div>
-        </div>
-
-        <hr class="sep" />
-
-        <div class="iconTitle">
-          <div class="icon" aria-hidden="true">✅</div>
-          <div>
-            <b>What we accept</b>
-            <div class="mini">Clear, specific, respectful requests.</div>
-          </div>
-        </div>
-
-        <ul class="list">
-          <li>Lesson requests (beginner-friendly)</li>
-          <li>Pop culture topics (movies/music/gaming/news)</li>
-          <li>Website bugs or layout issues</li>
-          <li>Accessibility + mobile improvements</li>
-        </ul>
-
-        <div class="mini" style="margin-top:10px;">
-          Cybersecurity content is defensive and authorized only — no hacking instructions.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUGGESTION BOX -->
-  <section class="section motion-in" id="suggest">
-    <div class="card pad">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
-        <div>
-          <h2 style="margin:0 0 6px;">Suggestion Box</h2>
-          <p class="mini" style="margin:0;">This uses a safe email draft (mailto). No tracking. No database.</p>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn" type="button" id="btnTop">Back to Top</button>
-          <a class="btn ghost" href="/learn.html">Learn</a>
-        </div>
-      </div>
-
-      <hr class="sep" />
-
-      <div class="formRow">
-        <div>
-          <div class="label" for="type">Type</div>
-          <select class="select" id="type">
-            <option value="Topic Request">Topic Request</option>
-            <option value="Bug Report">Bug Report</option>
-            <option value="Feature Idea">Feature Idea</option>
-            <option value="Partnership/Collab">Partnership / Collab</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div>
           <div class="label" for="name">Name (optional)</div>
           <input class="input" id="name" type="text" placeholder="Your name (optional)" />
         </div>
@@ -148,7 +11,7 @@
             <option value="Learn">Learn (Basic Skills)</option>
             <option value="Pop Culture">Pop Culture</option>
             <option value="Blue Focus Journal">Blue Focus Journal</option>
-            <option value="Plans/Support">Plans / Support</option>
+            <optionlans / Support</option>
             <option value="Site UI">Site UI / Mobile</option>
           </select>
         </div>
@@ -186,30 +49,12 @@
         <div>
           <h2 style="margin:0;">Donate / Support</h2>
           <div class="mini">Optional support to help cover hosting and content creation.</div>
-        </div>
-      </div>
-
-      <p class="mini" style="margin-top:10px;">
-        Donations are optional and help keep LearnPulse free for everyone. We do not promise outcomes.
-        Informational only. Results vary.
-      </p>
-
-      <div class="grid" style="margin-top:12px;">
-        <div class="card pad" style="box-shadow:none;">
-          <b>Quick Support (Placeholder)</b>
-          <p class="mini" style="margin-top:6px;">
+        </divni" style="margin-top:6px;">
             Replace the link below with your real donation link later (PayPal, Ko-fi, Buy Me a Coffee, etc.).
           </p>
           <a class="btn" id="donateLink" href="#" rel="nofollow">Donate Link (Not Connected Yet)</a>
           <div class="smallprint" style="margin-top:10px;">
-            Tip: once connected, keep it transparent: what support funds, refund policy if applicable, and contact.
-          </div>
-        </div>
-
-        <div class="card pad" style="box-shadow:none;">
-          <b>Support via Pro</b>
-          <p class="mini" style="margin-top:6px;">
-            Pro is optional. If you want advanced packs later, you can upgrade on the Plans page.
+          If you want advanced packs later, you can upgrade on the Plans page.
           </p>
           <a class="btn ghost" href="/plans.html">View Plans</a>
           <div class="smallprint" style="margin-top:10px;">No guarantees. Results vary.</div>

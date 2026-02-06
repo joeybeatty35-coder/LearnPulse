@@ -1,9 +1,412 @@
-{
-  "rewrites": [
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/(.*)", "destination": "/blog.html" },
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Store — LearnPulse</title>
+  <meta name="description" content="LearnPulse Store: paid digital products, free downloads, and ways to support LearnPulse. Privacy-first. Informational only. Results vary." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/logo.png" />
+</head>
 
-    { "source": "/bluefocus", "destination": "/bluefocus.html" },
-    { "source": "/bluefocus/(.*)", "destination": "/bluefocus.html" }
-  ]
-}
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="LearnPulse Home">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <b>LearnPulse</b>
+        <span>Privacy-first learning + discovery</span>
+      </div>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="/learn.html">Learn</a>
+      <a href="/blog.html">Pop Culture</a>
+      <a href="/bluefocus.html">Blue Focus Journal</a>
+      <a href="/store.html" aria-current="page">Store</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+
+    <div class="navcta">
+      <a class="btn ghost" href="#free">Free PDFs</a>
+      <a class="btn primary" href="#paid">Paid Products</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero motion-in">
+    <div class="heroGrid">
+      <div class="card pad">
+        <p class="kicker">STORE • DIGITAL PRODUCTS • FREE DOWNLOADS</p>
+        <h1 class="h1">Buy what helps. Download what’s free. Support what’s useful.</h1>
+        <p class="sub">
+          LearnPulse is built to be calm, practical, and privacy-first.
+          No hype. No guarantees. Just tools you can apply.
+          <b>Informational only.</b> <b>Results vary.</b>
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 6px;">
+          <span class="chip">Privacy-first</span>
+          <span class="chip">No spam</span>
+          <span class="chip">No politics / religion</span>
+          <span class="chip">Value-first</span>
+        </div>
+
+        <div class="disclaimer">
+          ⚠️ Scam protection: LearnPulse will <b>never</b> DM you asking for money, favors, passwords, gift cards, or “verification.”
+          Purchases happen only through official checkout links on this page.
+        </div>
+
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">🧭</div>
+          <div>
+            <b>North Star</b>
+            <div class="mini">
+              Small wins add up. Consistency matters. Effort on bad days is still progress.
+              You can change your life one small change at a time.
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer" style="margin-top:12px;">
+          Note: These products are educational and reflective tools, not professional medical, mental health, legal, or financial advice.
+          If you need urgent help, contact local emergency services or a qualified professional.
+        </div>
+      </div>
+
+      <div class="card pad">
+        <div class="heroArt">
+          <img src="/assets/logo.png" alt="LearnPulse" />
+          <div class="overlay"></div>
+          <div class="artText">
+            <b>LearnPulse Store</b>
+            <div class="mini">Clear products. Clear rules. Clear support options.</div>
+          </div>
+        </div>
+
+        <hr class="sep" />
+
+        <div class="iconTitle">
+          <div class="icon" aria-hidden="true">🧾</div>
+          <div>
+            <b>How payment works (simple)</b>
+            <div class="mini">Two different actions:</div>
+          </div>
+        </div>
+
+        <ul class="mini" style="margin:10px 0 0 18px; line-height:1.55;">
+          <li><b>Tip Jar</b> = support free content (non-refundable).</li>
+          <li><b>Paid Products</b> = purchase a specific download (delivery handled by the checkout platform).</li>
+        </ul>
+
+        <hr class="sep" />
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a class="btn" href="#tipjar">Support (Tip Jar)</a>
+          <a class="btn ghost" href="#paid">Browse Paid</a>
+          <a class="btn ghost" href="#free">Browse Free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIP JAR -->
+  <section class="section motion-in" id="tipjar">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Tip Jar — Support LearnPulse</h2>
+          <p class="mini" style="margin:0;">
+            If our free content helped you, tips keep the site running. Tips are final (non-refundable).
+          </p>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="disclaimer">
+        Use your <b>Tip Jar QR</b> (your Chime/other support QR). Keep this separate from product checkout.
+      </div>
+
+      <!-- Replace the image src with your actual tip jar QR image path when ready -->
+      <div class="card pad" style="margin-top:12px;">
+        <b>Tip Jar QR</b>
+        <div class="mini" style="margin-top:6px;">Scan to tip (support free content). This is not a product purchase.</div>
+        <div style="margin-top:12px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+          <div style="width:160px; height:160px; border-radius:16px; border:1px dashed rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center;">
+            <span class="mini">Add QR image</span>
+          </div>
+          <div class="mini" style="max-width:520px;">
+            <b>Optional clarity text you can add near the QR:</b><br/>
+            “Tip Jar: $1 / $5 / custom amount. Thank you for supporting free LearnPulse content.”
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:12px;">
+        Privacy-first: we don’t ask for passwords, codes, or sensitive personal data. Don’t share private info in messages.
+      </div>
+    </div>
+  </section>
+
+  <!-- PAID PRODUCTS -->
+  <section class="section motion-in" id="paid">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Paid Digital Products</h2>
+          <p class="mini" style="margin:0;">
+            Clear, downloadable tools. Personal use only (no redistribution).
+          </p>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn ghost" href="#free">Skip to Free PDFs</a>
+          <a class="btn" href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="disclaimer">
+        ✅ After purchase: your checkout platform should show a confirmation + provide the download.  
+        If delivery fails, contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+      </div>
+
+      <div class="feedWrap" style="margin-top:14px;">
+        <!-- Product 1 -->
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Flagship</span>
+            <span class="badge good">Paid</span>
+          </div>
+          <div class="feedTitle">Root of Learning Playbook (120-Day)</div>
+          <div class="feedDesc">
+            A structured system to build discipline, learning momentum, and identity-level consistency using small wins.
+            Includes a “brain ↔ heart connection” lens (emotional intelligence + practical reps).
+          </div>
+          <div class="aiLine" aria-hidden="true"></div>
+          <div class="mini" style="margin-top:10px;">
+            Best for: people who want a step-by-step playbook, weekly rhythm, and a simple daily system.  
+            <b>Informational only. Results vary.</b>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <!-- Replace this with your PayHip product URL -->
+            <a class="btn primary" href="#" target="_blank" rel="noopener">Buy on PayHip</a>
+            <a class="btn ghost" href="/disclaimer.html">Read Disclaimer</a>
+          </div>
+        </article>
+
+        <!-- Product 2 Placeholder -->
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Coming Next</span>
+            <span class="badge info">Paid</span>
+          </div>
+          <div class="feedTitle">Next Product (Coming Soon)</div>
+          <div class="feedDesc">
+            This slot is reserved for your next paid PDF/ebook. Keep the store simple: launch one product at a time.
+          </div>
+          <div class="mini" style="margin-top:10px;">
+            Tip: Launch → collect feedback → improve → then add the next product.
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn" href="/support.html">Request a Topic</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="disclaimer" style="margin-top:12px;">
+        License: Personal use only. No re-uploading, reselling, or redistribution. LearnPulse © All rights reserved.
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE DOWNLOADS -->
+  <section class="section motion-in" id="free">
+    <div class="card pad">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h2 style="margin:0 0 6px;">Free Downloads (Watermarked)</h2>
+          <p class="mini" style="margin:0;">
+            Free educational templates. Watermarked to prevent re-upload and resale scams.
+          </p>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <div class="disclaimer">
+        Important: these are educational tools. They do not replace professional care.  
+        If you’re in crisis or danger, contact local emergency services immediately.
+      </div>
+
+      <div class="feedWrap" style="margin-top:14px;">
+        <!-- Replace href with the final file paths you host in your repo -->
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Free</span>
+            <span class="badge good">Download</span>
+          </div>
+          <div class="feedTitle">Post-Traumatic Growth (PTG) — 365 Day Journal Template</div>
+          <div class="feedDesc">Daily structure for reflection, resilience, and rebuilding meaning over time.</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#" download>Download PDF</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">Informational only. Results vary.</div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Free</span>
+            <span class="badge good">Download</span>
+          </div>
+          <div class="feedTitle">Diabetes Wellness — 365 Journal</div>
+          <div class="feedDesc">Tracking + habits support (educational). Not medical advice.</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#" download>Download PDF</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">Informational only. Results vary.</div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Free</span>
+            <span class="badge good">Download</span>
+          </div>
+          <div class="feedTitle">Depression Support — 365 Journal</div>
+          <div class="feedDesc">A gentle daily structure for habits, reflection, and support prompts.</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#" download>Download PDF</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">Informational only. Results vary.</div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Free</span>
+            <span class="badge good">Download</span>
+          </div>
+          <div class="feedTitle">Alcohol Recovery — 365 Journal</div>
+          <div class="feedDesc">Daily reflection + tracking support. Not treatment or professional advice.</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#" download>Download PDF</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">Informational only. Results vary.</div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedMeta">
+            <span class="tag">Free</span>
+            <span class="badge good">Download</span>
+          </div>
+          <div class="feedTitle">Healthy Weight + Energy — 365 Journal</div>
+          <div class="feedDesc">Meal planning + movement prompts (educational). No promises.</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+            <a class="btn primary" href="#" download>Download PDF</a>
+          </div>
+          <div class="mini" style="margin-top:10px;">Informational only. Results vary.</div>
+        </article>
+      </div>
+
+      <div class="disclaimer" style="margin-top:12px;">
+        Free downloads are watermarked and provided as-is. If a link breaks, email:
+        <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section motion-in" id="faq">
+    <div class="card pad">
+      <h2 style="margin:0 0 6px;">FAQ</h2>
+      <hr class="sep" />
+
+      <div class="feedWrap">
+        <article class="feedItem">
+          <div class="feedTitle">Do you store my personal data?</div>
+          <div class="feedDesc">
+            LearnPulse is privacy-first. For purchases, the checkout platform may collect what it needs to complete payment.
+            LearnPulse itself does not ask for passwords or sensitive personal information.
+          </div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedTitle">Refunds?</div>
+          <div class="feedDesc">
+            Tips are final. For paid products, follow the checkout platform’s policy and contact us if delivery fails.
+          </div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedTitle">Can I share the PDF?</div>
+          <div class="feedDesc">
+            No. Personal use only. No reposting, reselling, or redistribution.
+          </div>
+        </article>
+
+        <article class="feedItem">
+          <div class="feedTitle">Why the “no politics / religion” rule?</div>
+          <div class="feedDesc">
+            LearnPulse focuses on learning and practical help without high-conflict topics. This keeps the community safe and productive.
+          </div>
+        </article>
+      </div>
+
+      <div class="disclaimer" style="margin-top:12px;">
+        Informational only. Results vary. Not medical, legal, tax, financial, or mental health advice.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footerGrid">
+      <div>
+        <b>LearnPulse</b>
+        <div class="mini">Educational + discovery-focused • Privacy-first • Informational only</div>
+        <div class="mini" style="margin-top:8px;">
+          Contact: <a href="mailto:learnpulse.app@gmail.com">learnpulse.app@gmail.com</a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="/">Home</a>
+        <a href="/learn.html">Learn</a>
+        <a href="/blog.html">Pop Culture</a>
+        <a href="/bluefocus.html">Blue Focus Journal</a>
+        <a href="/store.html">Store</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // tiny UX: smooth scroll for on-page anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", e => {
+      const id = a.getAttribute("href");
+      const el = document.querySelector(id);
+      if(!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior:"smooth" });
+    });
+  });
+</script>
+
+</body>
+</html>

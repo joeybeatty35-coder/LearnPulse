@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LearnPulse Community — Rules & Safety</title>
+  <meta name="description" content="LearnPulse community guidelines, safety guardrails, and how to share DIY and learning ideas responsibly." />
+  <style>
+    :root{
+      --bg:#050A14;
+      --panel: rgba(10,18,35,.72);
+      --panel2: rgba(10,18,35,.48);
+      --text:#EAF2FF;
+      --muted:#B9C7E6;
+      --line: rgba(120,160,255,.22);
+      --glow: rgba(71, 141, 255, .18);
+      --accent:#49A6FF;
+      --accent2:#14E0C5;
+      --warn:#FFB020;
+      --danger:#FF4D6D;
+      --ok:#2FEA7D;
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(73,166,255,.18), transparent 60%),
+        radial-gradient(900px 650px at 80% 20%, rgba(20,224,197,.14), transparent 55%),
+        radial-gradient(1000px 650px at 50% 85%, rgba(73,166,255,.10), transparent 55%),
+        linear-gradient(180deg, #040812 0%, #050A14 100%);
+      min-height:100vh;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(5,10,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width:200px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:10px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(73,166,255,.55), transparent 55%),
+        radial-gradient(circle at 70% 70%, rgba(20,224,197,.35), transparent 55%),
+        rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 0 18px rgba(73,166,255,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 210deg, transparent 0 35%, rgba(73,166,255,.22) 40%, transparent 60% 100%);
+      animation: spin 7s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .brand h1{
+      font-size:14px; margin:0; letter-spacing:.18em;
+      text-transform:uppercase; color:var(--muted);
+    }
+    .brand strong{
+      display:block; margin-top:2px;
+      font-size:16px; letter-spacing:.04em; color:var(--text);
+      text-transform:none;
+    }
+    .links{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);
+      font-size:13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(120,160,255,.34);
+      text-decoration:none;
+    }
+
+    main{max-width:var(--max); margin:0 auto; padding:22px 16px 40px;}
+    .hero{
+      padding:22px;
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(10,18,35,.78), rgba(10,18,35,.45));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(650px 220px at 20% 0%, rgba(73,166,255,.18), transparent 60%),
+        radial-gradient(540px 240px at 80% 10%, rgba(20,224,197,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-inner{position:relative}
+    .kicker{
+      font-size:12px; color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      margin:0 0 10px;
+    }
+    .title{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.15;
+      letter-spacing:.02em;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      max-width:78ch;
+      line-height:1.55;
+      font-size:15px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 880px){
+      .grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
+    }
+
+    .card{
+      padding:18px;
+      border-radius:var(--radius);
+      background: var(--panel);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.04em;
+    }
+    .card p, .card li{
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+    .list{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+
+    .banner{
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      margin-top:12px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size:12px;
+      color:var(--text);
+      margin:0 8px 10px 0;
+      user-select:none;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(73,166,255,.35);
+    }
+    .dot.ok{background:var(--ok); box-shadow:0 0 12px rgba(47,234,125,.35)}
+    .dot.warn{background:var(--warn); box-shadow:0 0 12px rgba(255,176,32,.35)}
+    .dot.danger{background:var(--danger); box-shadow:0 0 12px rgba(255,77,109,.35)}
+    .small{
+      font-size:12px;
+      color:rgba(185,199,230,.85);
+      line-height:1.45;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin:14px 0;
+    }
+
+    .rules{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 880px){ .rules{grid-template-columns:1fr} }
+    .rule{
+      padding:14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: var(--panel2);
+    }
+    .rule h3{
+      margin:0 0 6px;
+      font-size:14px;
+      letter-spacing:.03em;
+    }
+    .rule p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(73,166,255,.35);
+      background: linear-gradient(180deg, rgba(73,166,255,.18), rgba(73,166,255,.08));
+      color:var(--text);
+      font-size:13px;
+      letter-spacing:.02em;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(73,166,255,.55);
+      text-decoration:none;
+    }
+    .btn.secondary{
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+    }
+
+    footer{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px 34px;
+      color: rgba(185,199,230,.78);
+      font-size:12px;
+      line-height:1.5;
+    }
+    footer .foot{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>LearnPulse</h1>
+          <strong>Community • DIY • Learning</strong>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Primary">
+        <a class="pill" href="index.html">Home</a>
+        <a class="pill" href="store.html">Store</a>
+        <a class="pill" href="support.html">Support</a>
+        <a class="pill" href="root-of-learning-playbook.html">Root of Learning</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">Community safety-first</p>
+        <h2 class="title">LearnPulse Community Rules & Guardrails</h2>
+        <p class="subtitle">
+          LearnPulse is building a community-driven space where people can exchange practical knowledge:
+          DIY, learning methods, arts & crafts, and life systems. To keep it useful and respectful,
+          we run clear guardrails and do not allow content that turns into arguments or harm.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h2>What this community is for</h2>
+            <div class="banner">
+              <span class="badge"><span class="dot ok"></span> DIY + home projects</span>
+              <span class="badge"><span class="dot ok"></span> learning methods + study systems</span>
+              <span class="badge"><span class="dot ok"></span> arts & crafts + creative builds</span>
+              <span class="badge"><span class="dot ok"></span> calm peer support + problem-solving</span>
+            </div>
+            <ul class="list">
+              <li>Share what worked, what failed, and what you learned.</li>
+              <li>Ask for help respectfully. Give help with clarity and kindness.</li>
+              <li>Encourage small daily wins: progress on bad days still counts.</li>
+              <li>Keep it practical: steps, materials, photos, and safety notes.</li>
+            </ul>
+
+            <div class="divider"></div>
+            <p class="small">
+              <strong>Anonymous option:</strong> you can use a nickname and a small profile image.
+              Don’t post private personal data. If you share photos, remove sensitive details first.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>Hard boundaries (non-negotiable)</h2>
+            <div class="banner">
+              <span class="badge"><span class="dot danger"></span> No politics or religion debates</span>
+              <span class="badge"><span class="dot danger"></span> No harassment, hate, or threats</span>
+              <span class="badge"><span class="dot danger"></span> No sexual content</span>
+              <span class="badge"><span class="dot warn"></span> No spam, scams, or affiliate drops</span>
+            </div>
+            <p class="small">
+              We keep this space focused on learning and useful action. If a topic tends to become a “tug of war,”
+              it doesn’t belong here. Repeat violations can lead to removal and bans.
+            </p>
+
+            <div class="divider"></div>
+            <p class="small">
+              <strong>We will never:</strong> ask you for passwords, private documents, bank info, or “favors.”
+              Any message claiming to be LearnPulse requesting money outside official checkout links is not us.
+            </p>
+
+            <div class="cta">
+              <a class="btn" href="support.html">Report an issue</a>
+              <a class="btn secondary" href="support.html#tipjar">Support the free content</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h2>Posting rules (simple + enforceable)</h2>
+          <div class="rules">
+            <div class="rule">
+              <h3>1) Be respectful</h3>
+              <p>No insults, mockery, or “dunking.” Critique ideas, not people. Keep language clean.</p>
+            </div>
+            <div class="rule">
+              <h3>2) No personal data</h3>
+              <p>Don’t post addresses, phone numbers, IDs, private emails, or doxxing info—yours or anyone else’s.</p>
+            </div>
+            <div class="rule">
+              <h3>3) Safety notes required</h3>
+              <p>If a DIY involves tools, heat, electricity, chemicals, or ladders: include clear safety steps.</p>
+            </div>
+            <div class="rule">
+              <h3>4) No medical/mental-health treatment claims</h3>
+              <p>Share routines and support, but no “this cures” claims. Encourage professional help when needed.</p>
+            </div>
+            <div class="rule">
+              <h3>5) No spam or scams</h3>
+              <p>No unsolicited promos, link dumping, referral bait, or suspicious downloads.</p>
+            </div>
+            <div class="rule">
+              <h3>6) Keep it on-topic</h3>
+              <p>DIY, learning, crafts, and life systems. Off-topic arguments will be removed.</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="small">
+            <strong>Emotional intelligence rule:</strong> if you feel heated, pause. Ask one honest question.
+            The goal is “brain and heart on the same page”—clear action + calm intention.
+          </p>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h2>Compliance notes (Google Play friendly)</h2>
+          <ul class="list">
+            <li>This page is informational and sets behavior expectations.</li>
+            <li>No political or religious content categories are hosted or promoted.</li>
+            <li>No sexual content is permitted.</li>
+            <li>No direct requests for personal data. No newsletters or subscription harvesting.</li>
+            <li>Users are encouraged to report abuse and safety issues via Support.</li>
+          </ul>
+          <p class="small">
+            <strong>Informational only:</strong> results vary. Nothing here is medical, mental-health, legal, financial, or tax advice.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <strong>LearnPulse</strong> — practical learning systems, DIY ideas, and honest progress.<br />
+        <span class="mono">learnpulse.app</span>
+      </div>
+      <div>
+        <strong>Safety note:</strong> For emergencies, contact local emergency services.<br />
+        We can add a dedicated “Resources” page later if you want (hotlines & local help).
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
